@@ -3,8 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trello Todo Board</title>
+    <title>Trello Todo Board Pro</title>
     <style>
+        :root {
+            --bg-primary: linear-gradient(135deg, #0079bf 0%, #5067c5 100%);
+            --bg-column: #ebecf0;
+            --bg-card: #ffffff;
+            --text-primary: #172b4d;
+            --text-secondary: #5e6c84;
+            --border-color: #ddd;
+            --shadow: 0 1px 3px rgba(0,0,0,0.12);
+            --accent: #0079bf;
+        }
+
+        .dark-mode {
+            --bg-primary: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            --bg-column: #2d2d44;
+            --bg-card: #3d3d5c;
+            --text-primary: #e0e0e0;
+            --text-secondary: #a0a0a0;
+            --border-color: #4d4d6d;
+            --shadow: 0 1px 3px rgba(0,0,0,0.3);
+            --accent: #4dabf7;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -13,39 +35,127 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #0079bf 0%, #5067c5 100%);
+            background: var(--bg-primary);
             min-height: 100vh;
-            padding: 20px;
+            padding: 15px;
+            transition: background 0.3s ease;
         }
 
-        .board-header {
-            text-align: center;
-            margin-bottom: 25px;
+        /* Header & Toolbar */
+        .toolbar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
         }
 
-        .board-header h1 {
+        .toolbar-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .toolbar h1 {
             color: white;
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             text-shadow: 0 2px 4px rgba(0,0,0,0.2);
         }
 
+        .search-box {
+            position: relative;
+        }
+
+        .search-box input {
+            padding: 10px 15px 10px 40px;
+            border: none;
+            border-radius: 8px;
+            background: rgba(255,255,255,0.9);
+            font-size: 0.9rem;
+            width: 200px;
+            transition: all 0.3s;
+        }
+
+        .search-box input:focus {
+            outline: none;
+            width: 250px;
+            box-shadow: 0 0 0 3px rgba(255,255,255,0.3);
+        }
+
+        .search-box::before {
+            content: '🔍';
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.9rem;
+        }
+
+        .toolbar-right {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .toolbar-btn {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 8px;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            cursor: pointer;
+            font-size: 0.85rem;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .toolbar-btn:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-2px);
+        }
+
+        .toolbar-btn.active {
+            background: rgba(255,255,255,0.9);
+            color: #333;
+        }
+
+        /* Board */
         .board {
             display: flex;
             gap: 15px;
             overflow-x: auto;
             padding-bottom: 20px;
-            min-height: calc(100vh - 120px);
+            min-height: calc(100vh - 140px);
+            align-items: flex-start;
+        }
+
+        .board::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .board::-webkit-scrollbar-thumb {
+            background: rgba(255,255,255,0.3);
+            border-radius: 4px;
         }
 
         .column {
-            background: #ebecf0;
+            background: var(--bg-column);
             border-radius: 12px;
-            min-width: 280px;
-            max-width: 280px;
+            min-width: 300px;
+            max-width: 300px;
             padding: 12px;
             display: flex;
             flex-direction: column;
-            max-height: calc(100vh - 140px);
+            max-height: calc(100vh - 160px);
+            transition: background 0.3s;
         }
 
         .column-header {
@@ -59,15 +169,60 @@
         .column-title {
             font-weight: 700;
             font-size: 0.95rem;
-            color: #172b4d;
+            color: var(--text-primary);
+            cursor: pointer;
+            padding: 4px 8px;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+
+        .column-title:hover {
+            background: rgba(0,0,0,0.1);
+        }
+
+        .column-title-input {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--text-primary);
+            background: var(--bg-card);
+            border: 2px solid var(--accent);
+            border-radius: 4px;
+            padding: 4px 8px;
+            width: 100%;
+        }
+
+        .column-actions {
+            display: flex;
+            gap: 5px;
+            align-items: center;
         }
 
         .card-count {
-            background: #ddd;
-            color: #555;
+            background: rgba(0,0,0,0.1);
+            color: var(--text-secondary);
             padding: 2px 8px;
             border-radius: 10px;
             font-size: 0.75rem;
+        }
+
+        .column-delete {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            cursor: pointer;
+            padding: 4px;
+            border-radius: 4px;
+            opacity: 0;
+            transition: all 0.2s;
+        }
+
+        .column:hover .column-delete {
+            opacity: 1;
+        }
+
+        .column-delete:hover {
+            background: #ffebee;
+            color: #e53935;
         }
 
         .cards-container {
@@ -81,19 +236,21 @@
         }
 
         .cards-container::-webkit-scrollbar-thumb {
-            background: #c4c9cc;
+            background: rgba(0,0,0,0.2);
             border-radius: 3px;
         }
 
+        /* Cards */
         .card {
-            background: white;
+            background: var(--bg-card);
             border-radius: 8px;
             padding: 12px;
             margin-bottom: 10px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+            box-shadow: var(--shadow);
             cursor: grab;
             transition: all 0.2s ease;
             position: relative;
+            touch-action: none;
         }
 
         .card:hover {
@@ -104,41 +261,11 @@
         .card.dragging {
             opacity: 0.5;
             cursor: grabbing;
+            transform: rotate(3deg);
         }
 
-        .card-content {
-            color: #172b4d;
-            font-size: 0.9rem;
-            word-wrap: break-word;
-            padding-right: 20px;
-        }
-
-        .card-delete {
-            position: absolute;
-            top: 8px;
-            right: 8px;
-            background: none;
-            border: none;
-            color: #aaa;
-            cursor: pointer;
-            font-size: 1.1rem;
-            opacity: 0;
-            transition: all 0.2s;
-            width: 24px;
-            height: 24px;
-            border-radius: 4px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .card:hover .card-delete {
-            opacity: 1;
-        }
-
-        .card-delete:hover {
-            background: #ffebee;
-            color: #e53935;
+        .card.drag-over {
+            border-top: 3px solid var(--accent);
         }
 
         .card-labels {
@@ -152,7 +279,6 @@
             height: 8px;
             width: 40px;
             border-radius: 4px;
-            cursor: pointer;
         }
 
         .label.red { background: #ef5350; }
@@ -160,7 +286,91 @@
         .label.green { background: #66bb6a; }
         .label.blue { background: #42a5f5; }
         .label.purple { background: #ab47bc; }
+        .label.orange { background: #ff9800; }
 
+        .card-content {
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            word-wrap: break-word;
+            padding-right: 25px;
+            cursor: text;
+        }
+
+        .card-content-input {
+            width: 100%;
+            border: 2px solid var(--accent);
+            border-radius: 4px;
+            padding: 8px;
+            font-size: 0.9rem;
+            resize: none;
+            min-height: 60px;
+            color: var(--text-primary);
+            background: var(--bg-card);
+        }
+
+        .card-due {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-top: 8px;
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            padding: 4px 8px;
+            background: rgba(0,0,0,0.05);
+            border-radius: 4px;
+            width: fit-content;
+        }
+
+        .card-due.overdue {
+            background: #ffebee;
+            color: #e53935;
+        }
+
+        .card-due.soon {
+            background: #fff8e1;
+            color: #f57c00;
+        }
+
+        .card-due.completed {
+            background: #e8f5e9;
+            color: #43a047;
+        }
+
+        .card-actions {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            display: flex;
+            gap: 2px;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+
+        .card:hover .card-actions {
+            opacity: 1;
+        }
+
+        .card-btn {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            cursor: pointer;
+            padding: 4px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+
+        .card-btn:hover {
+            background: rgba(0,0,0,0.1);
+        }
+
+        .card-btn.delete:hover {
+            background: #ffebee;
+            color: #e53935;
+        }
+
+        /* Add Card Form */
         .add-card-form {
             margin-top: 8px;
         }
@@ -171,7 +381,7 @@
             background: transparent;
             border: none;
             border-radius: 8px;
-            color: #5e6c84;
+            color: var(--text-secondary);
             cursor: pointer;
             text-align: left;
             font-size: 0.9rem;
@@ -180,7 +390,7 @@
 
         .add-card-btn:hover {
             background: rgba(0,0,0,0.05);
-            color: #172b4d;
+            color: var(--text-primary);
         }
 
         .add-card-btn::before {
@@ -189,6 +399,10 @@
 
         .card-input-area {
             display: none;
+            background: var(--bg-card);
+            border-radius: 8px;
+            padding: 12px;
+            box-shadow: var(--shadow);
         }
 
         .card-input-area.active {
@@ -199,50 +413,73 @@
             width: 100%;
             padding: 10px;
             border: none;
-            border-radius: 8px;
+            border-radius: 6px;
             font-size: 0.9rem;
             resize: none;
             min-height: 60px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.12);
-            margin-bottom: 8px;
+            background: var(--bg-column);
+            color: var(--text-primary);
+            margin-bottom: 10px;
         }
 
         .card-input:focus {
-            outline: 2px solid #0079bf;
+            outline: 2px solid var(--accent);
+        }
+
+        .due-date-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .due-date-row label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .due-date-input {
+            padding: 6px 10px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-size: 0.85rem;
+            background: var(--bg-column);
+            color: var(--text-primary);
         }
 
         .input-actions {
             display: flex;
             gap: 8px;
             align-items: center;
+            flex-wrap: wrap;
         }
 
         .btn-add {
-            background: #0079bf;
+            background: var(--accent);
             color: white;
             border: none;
             padding: 8px 16px;
             border-radius: 4px;
             cursor: pointer;
             font-weight: 500;
-            transition: background 0.2s;
+            transition: all 0.2s;
         }
 
         .btn-add:hover {
-            background: #026aa7;
+            filter: brightness(1.1);
         }
 
         .btn-cancel {
             background: none;
             border: none;
-            color: #6b778c;
+            color: var(--text-secondary);
             cursor: pointer;
             font-size: 1.3rem;
             padding: 4px 8px;
         }
 
         .btn-cancel:hover {
-            color: #172b4d;
+            color: var(--text-primary);
         }
 
         .label-picker {
@@ -265,7 +502,7 @@
         }
 
         .label-option.selected {
-            border-color: #172b4d;
+            border-color: var(--text-primary);
         }
 
         .label-option.red { background: #ef5350; }
@@ -273,88 +510,318 @@
         .label-option.green { background: #66bb6a; }
         .label-option.blue { background: #42a5f5; }
         .label-option.purple { background: #ab47bc; }
+        .label-option.orange { background: #ff9800; }
 
-        .drop-zone {
-            min-height: 10px;
-            border-radius: 8px;
-            transition: all 0.2s;
+        /* Add Column */
+        .add-column {
+            min-width: 300px;
+            max-width: 300px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 12px;
+            padding: 12px;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 500;
+            height: fit-content;
         }
 
-        .drop-zone.drag-over {
-            background: rgba(0, 121, 191, 0.2);
-            min-height: 60px;
-            border: 2px dashed #0079bf;
+        .add-column:hover {
+            background: rgba(255,255,255,0.3);
         }
 
+        .add-column-form {
+            min-width: 300px;
+            max-width: 300px;
+            background: var(--bg-column);
+            border-radius: 12px;
+            padding: 12px;
+            display: none;
+        }
+
+        .add-column-form.active {
+            display: block;
+        }
+
+        .add-column-input {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid var(--accent);
+            border-radius: 6px;
+            font-size: 0.95rem;
+            margin-bottom: 10px;
+            background: var(--bg-card);
+            color: var(--text-primary);
+        }
+
+        /* Empty State */
         .empty-state {
             text-align: center;
-            padding: 20px;
-            color: #5e6c84;
+            padding: 30px 20px;
+            color: var(--text-secondary);
             font-size: 0.85rem;
         }
 
+        .empty-state span {
+            font-size: 2rem;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        /* Modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal {
+            background: var(--bg-card);
+            border-radius: 12px;
+            padding: 25px;
+            max-width: 400px;
+            width: 90%;
+            color: var(--text-primary);
+        }
+
+        .modal h3 {
+            margin-bottom: 15px;
+        }
+
+        .modal p {
+            margin-bottom: 20px;
+            color: var(--text-secondary);
+        }
+
+        .modal-actions {
+            display: flex;
+            gap: 10px;
+            justify-content: flex-end;
+        }
+
+        .modal-btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .modal-btn.cancel {
+            background: var(--bg-column);
+            color: var(--text-primary);
+        }
+
+        .modal-btn.danger {
+            background: #e53935;
+            color: white;
+        }
+
+        .modal-btn:hover {
+            filter: brightness(0.95);
+        }
+
+        /* Toast */
+        .toast {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #333;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 8px;
+            transform: translateX(400px);
+            transition: transform 0.3s ease;
+            z-index: 1001;
+        }
+
+        .toast.show {
+            transform: translateX(0);
+        }
+
+        .toast.success {
+            background: #43a047;
+        }
+
+        .toast.error {
+            background: #e53935;
+        }
+
+        /* Responsive */
         @media (max-width: 768px) {
-            .column {
-                min-width: 260px;
+            .toolbar {
+                flex-direction: column;
+                align-items: stretch;
             }
+
+            .toolbar-left {
+                justify-content: center;
+            }
+
+            .toolbar-right {
+                justify-content: center;
+            }
+
+            .search-box input {
+                width: 100%;
+            }
+
+            .search-box input:focus {
+                width: 100%;
+            }
+
+            .column {
+                min-width: 280px;
+                max-width: 280px;
+            }
+
+            .add-column, .add-column-form {
+                min-width: 280px;
+                max-width: 280px;
+            }
+        }
+
+        /* Touch drag feedback */
+        .touch-dragging {
+            position: fixed;
+            z-index: 1000;
+            pointer-events: none;
+            opacity: 0.9;
+            transform: rotate(3deg);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
     </style>
 </head>
 <body>
-    <div class="board-header">
-        <h1>📋 Trello Todo Board</h1>
+    <div class="toolbar">
+        <div class="toolbar-left">
+            <h1>📋 Trello Board Pro</h1>
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Tìm kiếm..." oninput="handleSearch()">
+            </div>
+        </div>
+        <div class="toolbar-right">
+            <button class="toolbar-btn" id="darkModeBtn" onclick="toggleDarkMode()">
+                <span id="darkModeIcon">🌙</span> Dark
+            </button>
+            <button class="toolbar-btn" onclick="exportData()">
+                📤 Export
+            </button>
+            <button class="toolbar-btn" onclick="document.getElementById('importInput').click()">
+                📥 Import
+            </button>
+            <input type="file" id="importInput" accept=".json" style="display:none" onchange="importData(event)">
+        </div>
     </div>
 
     <div class="board" id="board">
         <!-- Columns will be rendered here -->
     </div>
 
+    <!-- Delete Confirmation Modal -->
+    <div class="modal-overlay" id="deleteModal">
+        <div class="modal">
+            <h3>⚠️ Xác nhận xóa</h3>
+            <p id="deleteMessage">Bạn có chắc muốn xóa?</p>
+            <div class="modal-actions">
+                <button class="modal-btn cancel" onclick="closeDeleteModal()">Hủy</button>
+                <button class="modal-btn danger" onclick="confirmDelete()">Xóa</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast -->
+    <div class="toast" id="toast"></div>
+
     <script>
-        // Data
-        let boardData = JSON.parse(localStorage.getItem('trelloBoard')) || {
+        // ==================== DATA ====================
+        let boardData = JSON.parse(localStorage.getItem('trelloBoardPro')) || {
             columns: [
                 { id: 'todo', title: '📝 Cần làm', cards: [] },
                 { id: 'doing', title: '🔄 Đang làm', cards: [] },
                 { id: 'done', title: '✅ Hoàn thành', cards: [] }
-            ]
+            ],
+            settings: {
+                darkMode: false
+            }
         };
 
-        // Drag state
+        let searchQuery = '';
+        let deleteCallback = null;
         let draggedCard = null;
         let draggedFromColumn = null;
+        let selectedLabels = {};
 
-        // Render board
+        // Touch drag state
+        let touchDragElement = null;
+        let touchStartX = 0;
+        let touchStartY = 0;
+
+        // ==================== INITIALIZE ====================
+        document.addEventListener('DOMContentLoaded', () => {
+            if (boardData.settings?.darkMode) {
+                document.body.classList.add('dark-mode');
+                document.getElementById('darkModeIcon').textContent = '☀️';
+                document.getElementById('darkModeBtn').classList.add('active');
+            }
+            renderBoard();
+        });
+
+        // ==================== RENDER ====================
         function renderBoard() {
             const board = document.getElementById('board');
-            board.innerHTML = boardData.columns.map(column => `
+            const filteredColumns = getFilteredData();
+
+            board.innerHTML = filteredColumns.map(column => `
                 <div class="column" data-column-id="${column.id}">
                     <div class="column-header">
-                        <span class="column-title">${column.title}</span>
-                        <span class="card-count">${column.cards.length}</span>
+                        <span class="column-title" ondblclick="editColumnTitle('${column.id}')" id="title-${column.id}">${escapeHtml(column.title)}</span>
+                        <div class="column-actions">
+                            <span class="card-count">${column.cards.length}</span>
+                            <button class="column-delete" onclick="requestDeleteColumn('${column.id}')" title="Xóa cột">🗑️</button>
+                        </div>
                     </div>
                     <div class="cards-container" 
+                         data-column-id="${column.id}"
                          ondragover="handleDragOver(event)" 
                          ondrop="handleDrop(event, '${column.id}')"
                          ondragleave="handleDragLeave(event)">
                         ${column.cards.length === 0 ? 
-                            '<div class="empty-state">Kéo thả card vào đây</div>' : 
+                            '<div class="empty-state"><span>📋</span>Chưa có thẻ nào</div>' : 
                             column.cards.map(card => renderCard(card, column.id)).join('')}
-                        <div class="drop-zone"></div>
                     </div>
                     <div class="add-card-form">
-                        <button class="add-card-btn" onclick="showAddForm('${column.id}')">
-                            Thêm thẻ
-                        </button>
+                        <button class="add-card-btn" onclick="showAddForm('${column.id}')">Thêm thẻ</button>
                         <div class="card-input-area" id="input-${column.id}">
                             <textarea class="card-input" 
                                       id="textarea-${column.id}" 
-                                      placeholder="Nhập tiêu đề cho thẻ này..."
+                                      placeholder="Nhập nội dung thẻ..."
                                       onkeydown="handleInputKeydown(event, '${column.id}')"></textarea>
+                            <div class="due-date-row">
+                                <label>📅 Deadline:</label>
+                                <input type="date" class="due-date-input" id="duedate-${column.id}">
+                            </div>
                             <div class="input-actions">
-                                <button class="btn-add" onclick="addCard('${column.id}')">Thêm thẻ</button>
+                                <button class="btn-add" onclick="addCard('${column.id}')">Thêm</button>
                                 <button class="btn-cancel" onclick="hideAddForm('${column.id}')">×</button>
                                 <div class="label-picker" id="picker-${column.id}">
                                     <div class="label-option red" onclick="toggleLabel('${column.id}', 'red', this)"></div>
+                                    <div class="label-option orange" onclick="toggleLabel('${column.id}', 'orange', this)"></div>
                                     <div class="label-option yellow" onclick="toggleLabel('${column.id}', 'yellow', this)"></div>
                                     <div class="label-option green" onclick="toggleLabel('${column.id}', 'green', this)"></div>
                                     <div class="label-option blue" onclick="toggleLabel('${column.id}', 'blue', this)"></div>
@@ -364,43 +831,202 @@
                         </div>
                     </div>
                 </div>
-            `).join('');
+            `).join('') + `
+                <div class="add-column" id="addColumnBtn" onclick="showAddColumnForm()">
+                    + Thêm cột mới
+                </div>
+                <div class="add-column-form" id="addColumnForm">
+                    <input type="text" class="add-column-input" id="newColumnInput" 
+                           placeholder="Tên cột..." onkeydown="handleColumnInputKeydown(event)">
+                    <div class="input-actions">
+                        <button class="btn-add" onclick="addColumn()">Thêm</button>
+                        <button class="btn-cancel" onclick="hideAddColumnForm()">×</button>
+                    </div>
+                </div>
+            `;
+
+            // Add touch listeners
+            document.querySelectorAll('.card').forEach(card => {
+                card.addEventListener('touchstart', handleTouchStart, { passive: false });
+                card.addEventListener('touchmove', handleTouchMove, { passive: false });
+                card.addEventListener('touchend', handleTouchEnd);
+            });
         }
 
         function renderCard(card, columnId) {
-            const labelsHtml = card.labels && card.labels.length > 0 
+            const labelsHtml = card.labels?.length > 0 
                 ? `<div class="card-labels">${card.labels.map(l => `<div class="label ${l}"></div>`).join('')}</div>`
                 : '';
+            
+            const dueHtml = card.dueDate ? `<div class="card-due ${getDueStatus(card.dueDate)}">📅 ${formatDate(card.dueDate)}</div>` : '';
             
             return `
                 <div class="card" 
                      draggable="true" 
                      data-card-id="${card.id}"
+                     data-column-id="${columnId}"
                      ondragstart="handleDragStart(event, '${card.id}', '${columnId}')"
                      ondragend="handleDragEnd(event)">
                     ${labelsHtml}
-                    <div class="card-content">${escapeHtml(card.content)}</div>
-                    <button class="card-delete" onclick="deleteCard('${columnId}', '${card.id}')">×</button>
+                    <div class="card-content" ondblclick="editCard('${columnId}', '${card.id}')">${escapeHtml(card.content)}</div>
+                    ${dueHtml}
+                    <div class="card-actions">
+                        <button class="card-btn" onclick="editCard('${columnId}', '${card.id}')" title="Sửa">✏️</button>
+                        <button class="card-btn delete" onclick="requestDeleteCard('${columnId}', '${card.id}')" title="Xóa">🗑️</button>
+                    </div>
                 </div>
             `;
         }
 
-        // Selected labels for new card
-        let selectedLabels = {};
-
-        function toggleLabel(columnId, color, element) {
-            if (!selectedLabels[columnId]) selectedLabels[columnId] = [];
-            
-            const index = selectedLabels[columnId].indexOf(color);
-            if (index > -1) {
-                selectedLabels[columnId].splice(index, 1);
-                element.classList.remove('selected');
-            } else {
-                selectedLabels[columnId].push(color);
-                element.classList.add('selected');
-            }
+        // ==================== SEARCH ====================
+        function handleSearch() {
+            searchQuery = document.getElementById('searchInput').value.toLowerCase().trim();
+            renderBoard();
         }
 
+        function getFilteredData() {
+            if (!searchQuery) return boardData.columns;
+            
+            return boardData.columns.map(col => ({
+                ...col,
+                cards: col.cards.filter(card => 
+                    card.content.toLowerCase().includes(searchQuery)
+                )
+            }));
+        }
+
+        // ==================== DARK MODE ====================
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+            const isDark = document.body.classList.contains('dark-mode');
+            document.getElementById('darkModeIcon').textContent = isDark ? '☀️' : '🌙';
+            document.getElementById('darkModeBtn').classList.toggle('active', isDark);
+            
+            boardData.settings = boardData.settings || {};
+            boardData.settings.darkMode = isDark;
+            saveData();
+            showToast(isDark ? 'Đã bật Dark Mode' : 'Đã tắt Dark Mode');
+        }
+
+        // ==================== EXPORT/IMPORT ====================
+        function exportData() {
+            const dataStr = JSON.stringify(boardData, null, 2);
+            const blob = new Blob([dataStr], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `trello-backup-${new Date().toISOString().split('T')[0]}.json`;
+            a.click();
+            URL.revokeObjectURL(url);
+            showToast('Đã export dữ liệu!', 'success');
+        }
+
+        function importData(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+            
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                try {
+                    const imported = JSON.parse(e.target.result);
+                    if (imported.columns) {
+                        boardData = imported;
+                        saveData();
+                        renderBoard();
+                        showToast('Đã import dữ liệu!', 'success');
+                    } else {
+                        showToast('File không hợp lệ!', 'error');
+                    }
+                } catch {
+                    showToast('Lỗi đọc file!', 'error');
+                }
+            };
+            reader.readAsText(file);
+            event.target.value = '';
+        }
+
+        // ==================== COLUMN MANAGEMENT ====================
+        function showAddColumnForm() {
+            document.getElementById('addColumnBtn').style.display = 'none';
+            document.getElementById('addColumnForm').classList.add('active');
+            document.getElementById('newColumnInput').focus();
+        }
+
+        function hideAddColumnForm() {
+            document.getElementById('addColumnBtn').style.display = 'flex';
+            document.getElementById('addColumnForm').classList.remove('active');
+            document.getElementById('newColumnInput').value = '';
+        }
+
+        function handleColumnInputKeydown(event) {
+            if (event.key === 'Enter') addColumn();
+            if (event.key === 'Escape') hideAddColumnForm();
+        }
+
+        function addColumn() {
+            const input = document.getElementById('newColumnInput');
+            const title = input.value.trim();
+            if (!title) return;
+            
+            boardData.columns.push({
+                id: 'col-' + Date.now(),
+                title: title,
+                cards: []
+            });
+            
+            saveData();
+            renderBoard();
+            showToast('Đã thêm cột mới!', 'success');
+        }
+
+        function editColumnTitle(columnId) {
+            const titleEl = document.getElementById(`title-${columnId}`);
+            const column = boardData.columns.find(c => c.id === columnId);
+            const currentTitle = column.title;
+            
+            titleEl.outerHTML = `<input class="column-title-input" id="title-input-${columnId}" 
+                                        value="${escapeHtml(currentTitle)}" 
+                                        onblur="saveColumnTitle('${columnId}')"
+                                        onkeydown="handleColumnTitleKeydown(event, '${columnId}')">`;
+            
+            const input = document.getElementById(`title-input-${columnId}`);
+            input.focus();
+            input.select();
+        }
+
+        function handleColumnTitleKeydown(event, columnId) {
+            if (event.key === 'Enter') saveColumnTitle(columnId);
+            if (event.key === 'Escape') renderBoard();
+        }
+
+        function saveColumnTitle(columnId) {
+            const input = document.getElementById(`title-input-${columnId}`);
+            const newTitle = input.value.trim();
+            
+            if (newTitle) {
+                const column = boardData.columns.find(c => c.id === columnId);
+                column.title = newTitle;
+                saveData();
+            }
+            renderBoard();
+        }
+
+        function requestDeleteColumn(columnId) {
+            const column = boardData.columns.find(c => c.id === columnId);
+            document.getElementById('deleteMessage').textContent = 
+                `Bạn có chắc muốn xóa cột "${column.title}" và ${column.cards.length} thẻ trong đó?`;
+            
+            deleteCallback = () => {
+                boardData.columns = boardData.columns.filter(c => c.id !== columnId);
+                saveData();
+                renderBoard();
+                showToast('Đã xóa cột!', 'success');
+            };
+            
+            document.getElementById('deleteModal').classList.add('active');
+        }
+
+        // ==================== CARD MANAGEMENT ====================
         function showAddForm(columnId) {
             const form = document.getElementById(`input-${columnId}`);
             const btn = form.previousElementSibling;
@@ -415,6 +1041,7 @@
             form.classList.remove('active');
             btn.style.display = 'block';
             document.getElementById(`textarea-${columnId}`).value = '';
+            document.getElementById(`duedate-${columnId}`).value = '';
             selectedLabels[columnId] = [];
             document.querySelectorAll(`#picker-${columnId} .label-option`).forEach(el => {
                 el.classList.remove('selected');
@@ -426,41 +1053,105 @@
                 event.preventDefault();
                 addCard(columnId);
             }
-            if (event.key === 'Escape') {
-                hideAddForm(columnId);
+            if (event.key === 'Escape') hideAddForm(columnId);
+        }
+
+        function toggleLabel(columnId, color, element) {
+            if (!selectedLabels[columnId]) selectedLabels[columnId] = [];
+            
+            const index = selectedLabels[columnId].indexOf(color);
+            if (index > -1) {
+                selectedLabels[columnId].splice(index, 1);
+                element.classList.remove('selected');
+            } else {
+                selectedLabels[columnId].push(color);
+                element.classList.add('selected');
             }
         }
 
         function addCard(columnId) {
             const textarea = document.getElementById(`textarea-${columnId}`);
+            const dueDateInput = document.getElementById(`duedate-${columnId}`);
             const content = textarea.value.trim();
             
             if (!content) return;
             
             const column = boardData.columns.find(c => c.id === columnId);
-            const newCard = {
+            column.cards.push({
                 id: 'card-' + Date.now(),
                 content: content,
                 labels: selectedLabels[columnId] || [],
+                dueDate: dueDateInput.value || null,
                 createdAt: new Date().toISOString()
-            };
+            });
             
-            column.cards.push(newCard);
             saveData();
             renderBoard();
-            
-            // Re-show form for quick adding
             setTimeout(() => showAddForm(columnId), 50);
         }
 
-        function deleteCard(columnId, cardId) {
+        function editCard(columnId, cardId) {
             const column = boardData.columns.find(c => c.id === columnId);
-            column.cards = column.cards.filter(c => c.id !== cardId);
-            saveData();
+            const card = column.cards.find(c => c.id === cardId);
+            const cardEl = document.querySelector(`[data-card-id="${cardId}"] .card-content`);
+            
+            cardEl.innerHTML = `<textarea class="card-content-input" id="edit-${cardId}"
+                                          onblur="saveCardEdit('${columnId}', '${cardId}')"
+                                          onkeydown="handleCardEditKeydown(event, '${columnId}', '${cardId}')">${escapeHtml(card.content)}</textarea>`;
+            
+            const input = document.getElementById(`edit-${cardId}`);
+            input.focus();
+            input.setSelectionRange(input.value.length, input.value.length);
+        }
+
+        function handleCardEditKeydown(event, columnId, cardId) {
+            if (event.key === 'Enter' && !event.shiftKey) {
+                event.preventDefault();
+                saveCardEdit(columnId, cardId);
+            }
+            if (event.key === 'Escape') renderBoard();
+        }
+
+        function saveCardEdit(columnId, cardId) {
+            const input = document.getElementById(`edit-${cardId}`);
+            if (!input) return;
+            
+            const newContent = input.value.trim();
+            if (newContent) {
+                const column = boardData.columns.find(c => c.id === columnId);
+                const card = column.cards.find(c => c.id === cardId);
+                card.content = newContent;
+                saveData();
+            }
             renderBoard();
         }
 
-        // Drag and Drop
+        function requestDeleteCard(columnId, cardId) {
+            document.getElementById('deleteMessage').textContent = 'Bạn có chắc muốn xóa thẻ này?';
+            
+            deleteCallback = () => {
+                const column = boardData.columns.find(c => c.id === columnId);
+                column.cards = column.cards.filter(c => c.id !== cardId);
+                saveData();
+                renderBoard();
+                showToast('Đã xóa thẻ!', 'success');
+            };
+            
+            document.getElementById('deleteModal').classList.add('active');
+        }
+
+        // ==================== DELETE MODAL ====================
+        function closeDeleteModal() {
+            document.getElementById('deleteModal').classList.remove('active');
+            deleteCallback = null;
+        }
+
+        function confirmDelete() {
+            if (deleteCallback) deleteCallback();
+            closeDeleteModal();
+        }
+
+        // ==================== DRAG & DROP (Desktop) ====================
         function handleDragStart(event, cardId, columnId) {
             draggedCard = cardId;
             draggedFromColumn = columnId;
@@ -470,51 +1161,106 @@
 
         function handleDragEnd(event) {
             event.target.classList.remove('dragging');
-            document.querySelectorAll('.drop-zone').forEach(zone => {
-                zone.classList.remove('drag-over');
-            });
+            document.querySelectorAll('.card').forEach(c => c.classList.remove('drag-over'));
         }
 
         function handleDragOver(event) {
             event.preventDefault();
             event.dataTransfer.dropEffect = 'move';
-            const container = event.currentTarget;
-            const dropZone = container.querySelector('.drop-zone');
-            if (dropZone) dropZone.classList.add('drag-over');
         }
 
         function handleDragLeave(event) {
-            const container = event.currentTarget;
-            const dropZone = container.querySelector('.drop-zone');
-            if (dropZone && !container.contains(event.relatedTarget)) {
-                dropZone.classList.remove('drag-over');
-            }
+            event.currentTarget.querySelectorAll('.card').forEach(c => c.classList.remove('drag-over'));
         }
 
         function handleDrop(event, targetColumnId) {
             event.preventDefault();
-            
             if (!draggedCard || !draggedFromColumn) return;
             
-            // Find and remove card from source
-            const sourceColumn = boardData.columns.find(c => c.id === draggedFromColumn);
-            const cardIndex = sourceColumn.cards.findIndex(c => c.id === draggedCard);
-            const [card] = sourceColumn.cards.splice(cardIndex, 1);
-            
-            // Add to target
-            const targetColumn = boardData.columns.find(c => c.id === targetColumnId);
-            targetColumn.cards.push(card);
-            
-            // Reset
+            moveCard(draggedFromColumn, targetColumnId, draggedCard);
             draggedCard = null;
             draggedFromColumn = null;
+        }
+
+        // ==================== TOUCH DRAG (Mobile) ====================
+        function handleTouchStart(event) {
+            const card = event.currentTarget;
+            touchDragElement = card;
+            touchStartX = event.touches[0].clientX;
+            touchStartY = event.touches[0].clientY;
+            
+            card.dataset.touchStartTime = Date.now();
+        }
+
+        function handleTouchMove(event) {
+            if (!touchDragElement) return;
+            
+            const timeDiff = Date.now() - parseInt(touchDragElement.dataset.touchStartTime);
+            if (timeDiff < 200) return; // Long press threshold
+            
+            event.preventDefault();
+            
+            const touch = event.touches[0];
+            const deltaX = touch.clientX - touchStartX;
+            const deltaY = touch.clientY - touchStartY;
+            
+            touchDragElement.style.transform = `translate(${deltaX}px, ${deltaY}px) rotate(3deg)`;
+            touchDragElement.style.zIndex = '1000';
+            touchDragElement.style.opacity = '0.8';
+            
+            // Find drop target
+            const elemBelow = document.elementFromPoint(touch.clientX, touch.clientY);
+            const targetContainer = elemBelow?.closest('.cards-container');
+            
+            document.querySelectorAll('.cards-container').forEach(c => {
+                c.style.background = c === targetContainer ? 'rgba(0,121,191,0.1)' : '';
+            });
+        }
+
+        function handleTouchEnd(event) {
+            if (!touchDragElement) return;
+            
+            const touch = event.changedTouches[0];
+            const elemBelow = document.elementFromPoint(touch.clientX, touch.clientY);
+            const targetContainer = elemBelow?.closest('.cards-container');
+            
+            if (targetContainer) {
+                const targetColumnId = targetContainer.dataset.columnId;
+                const sourceColumnId = touchDragElement.dataset.columnId;
+                const cardId = touchDragElement.dataset.cardId;
+                
+                if (targetColumnId !== sourceColumnId) {
+                    moveCard(sourceColumnId, targetColumnId, cardId);
+                }
+            }
+            
+            // Reset styles
+            touchDragElement.style.transform = '';
+            touchDragElement.style.zIndex = '';
+            touchDragElement.style.opacity = '';
+            
+            document.querySelectorAll('.cards-container').forEach(c => {
+                c.style.background = '';
+            });
+            
+            touchDragElement = null;
+        }
+
+        function moveCard(fromColumnId, toColumnId, cardId) {
+            const sourceColumn = boardData.columns.find(c => c.id === fromColumnId);
+            const targetColumn = boardData.columns.find(c => c.id === toColumnId);
+            
+            const cardIndex = sourceColumn.cards.findIndex(c => c.id === cardId);
+            const [card] = sourceColumn.cards.splice(cardIndex, 1);
+            targetColumn.cards.push(card);
             
             saveData();
             renderBoard();
         }
 
+        // ==================== UTILITIES ====================
         function saveData() {
-            localStorage.setItem('trelloBoard', JSON.stringify(boardData));
+            localStorage.setItem('trelloBoardPro', JSON.stringify(boardData));
         }
 
         function escapeHtml(text) {
@@ -523,8 +1269,39 @@
             return div.innerHTML;
         }
 
-        // Initialize
-        renderBoard();
+        function formatDate(dateStr) {
+            const date = new Date(dateStr);
+            return date.toLocaleDateString('vi-VN', { day: '2-digit', month: '2-digit' });
+        }
+
+        function getDueStatus(dateStr) {
+            const due = new Date(dateStr);
+            const today = new Date();
+            today.setHours(0, 0, 0, 0);
+            due.setHours(0, 0, 0, 0);
+            
+            const diff = (due - today) / (1000 * 60 * 60 * 24);
+            
+            if (diff < 0) return 'overdue';
+            if (diff <= 2) return 'soon';
+            return '';
+        }
+
+        function showToast(message, type = '') {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.className = 'toast ' + type;
+            toast.classList.add('show');
+            
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+
+        // Close modal on outside click
+        document.getElementById('deleteModal').addEventListener('click', (e) => {
+            if (e.target === e.currentTarget) closeDeleteModal();
+        });
     </script>
 </body>
 </html>
