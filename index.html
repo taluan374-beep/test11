@@ -444,7 +444,7 @@
                 </div>
                 <div class="solution-visual">
                     <div class="feature-showcase">
-                        <div class="showcase-item active" data-feature="conversion">
+                        <div class="showcase-item active" data-feature="conversion" data-popup="conversion">
                             <div class="showcase-icon">
                                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="2">
                                     <circle cx="12" cy="12" r="10"/>
@@ -457,8 +457,9 @@
                                 <p>So với website thông thường không được tối ưu</p>
                             </div>
                             <div class="showcase-badge">+40%</div>
+                            <span class="popup-hint">Click để xem chi tiết →</span>
                         </div>
-                        <div class="showcase-item" data-feature="speed">
+                        <div class="showcase-item" data-feature="speed" data-popup="speed">
                             <div class="showcase-icon">
                                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2">
                                     <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
@@ -469,8 +470,9 @@
                                 <p>Tốc độ load trang siêu nhanh, giảm tỷ lệ thoát</p>
                             </div>
                             <div class="showcase-badge">90+</div>
+                            <span class="popup-hint">Click để xem chi tiết →</span>
                         </div>
-                        <div class="showcase-item" data-feature="mobile">
+                        <div class="showcase-item" data-feature="mobile" data-popup="mobile">
                             <div class="showcase-icon">
                                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2">
                                     <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
@@ -482,8 +484,9 @@
                                 <p>Ưu tiên trải nghiệm trên điện thoại di động</p>
                             </div>
                             <div class="showcase-badge">70%</div>
+                            <span class="popup-hint">Click để xem chi tiết →</span>
                         </div>
-                        <div class="showcase-item" data-feature="support">
+                        <div class="showcase-item" data-feature="support" data-popup="support">
                             <div class="showcase-icon">
                                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#ec4899" stroke-width="2">
                                     <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
@@ -494,6 +497,7 @@
                                 <p>Bảo hành và hỗ trợ kỹ thuật sau bàn giao</p>
                             </div>
                             <div class="showcase-badge">30 ngày</div>
+                            <span class="popup-hint">Click để xem chi tiết →</span>
                         </div>
                     </div>
                 </div>
@@ -1302,6 +1306,232 @@
             </svg>
         </a>
     </div>
+
+    <!-- Feature Detail Popups -->
+    <div class="popup-overlay" id="popupOverlay">
+        <div class="popup-modal">
+            <button class="popup-close" id="popupClose">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"/>
+                    <line x1="6" y1="6" x2="18" y2="18"/>
+                </svg>
+            </button>
+            <div class="popup-content" id="popupContent">
+                <!-- Content will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Popup Content Templates (hidden) -->
+    <template id="popup-conversion">
+        <div class="popup-header">
+            <div class="popup-icon" style="background: linear-gradient(135deg, #6366f1, #8b5cf6);">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <circle cx="12" cy="12" r="6"/>
+                    <circle cx="12" cy="12" r="2"/>
+                </svg>
+            </div>
+            <h3>Tỷ Lệ Chuyển Đổi Tăng 40%</h3>
+        </div>
+        <div class="popup-body">
+            <p class="popup-intro">Landing page của chúng tôi được thiết kế theo nguyên tắc <strong>Conversion-Centered Design (CCD)</strong>, giúp tăng tỷ lệ chuyển đổi đáng kể.</p>
+            
+            <h4>🎯 Những yếu tố giúp tăng chuyển đổi:</h4>
+            <ul class="popup-list">
+                <li><strong>Clear Value Proposition:</strong> Headline rõ ràng, giải thích lợi ích trong 3 giây đầu tiên</li>
+                <li><strong>Single Focus:</strong> Một mục tiêu duy nhất, không phân tâm người dùng</li>
+                <li><strong>Visual Hierarchy:</strong> Dẫn dắt mắt người dùng đến CTA chính</li>
+                <li><strong>Social Proof:</strong> Testimonials, số liệu, logos đối tác tạo niềm tin</li>
+                <li><strong>Urgency & Scarcity:</strong> Tạo cảm giác cấp bách để hành động ngay</li>
+            </ul>
+            
+            <div class="popup-stats">
+                <div class="popup-stat">
+                    <span class="stat-value">40%</span>
+                    <span class="stat-label">Tăng conversion rate</span>
+                </div>
+                <div class="popup-stat">
+                    <span class="stat-value">3x</span>
+                    <span class="stat-label">Tăng leads thu được</span>
+                </div>
+                <div class="popup-stat">
+                    <span class="stat-value">60%</span>
+                    <span class="stat-label">Giảm bounce rate</span>
+                </div>
+            </div>
+            
+            <div class="popup-cta">
+                <a href="#contact" class="btn btn-primary" onclick="closePopup()">Tư Vấn Miễn Phí</a>
+            </div>
+        </div>
+    </template>
+
+    <template id="popup-speed">
+        <div class="popup-header">
+            <div class="popup-icon" style="background: linear-gradient(135deg, #10b981, #34d399);">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                </svg>
+            </div>
+            <h3>PageSpeed Score > 90</h3>
+        </div>
+        <div class="popup-body">
+            <p class="popup-intro">Tốc độ tải trang ảnh hưởng trực tiếp đến <strong>trải nghiệm người dùng</strong> và <strong>thứ hạng SEO</strong>. Chúng tôi tối ưu mọi khía cạnh.</p>
+            
+            <h4>⚡ Kỹ thuật tối ưu tốc độ:</h4>
+            <ul class="popup-list">
+                <li><strong>Image Optimization:</strong> Nén ảnh, lazy loading, WebP format</li>
+                <li><strong>Code Minification:</strong> Nén CSS, JS, loại bỏ code không cần thiết</li>
+                <li><strong>CDN Integration:</strong> Phân phối nội dung từ server gần nhất</li>
+                <li><strong>Browser Caching:</strong> Cache tài nguyên để load nhanh lần sau</li>
+                <li><strong>Critical CSS:</strong> Load CSS quan trọng trước để render nhanh</li>
+            </ul>
+            
+            <div class="popup-metrics">
+                <h4>📊 Chỉ số đạt được:</h4>
+                <div class="metric-bars">
+                    <div class="metric-bar">
+                        <span class="metric-label">Performance</span>
+                        <div class="metric-progress"><div class="metric-fill" style="width: 95%; background: #10b981;"></div></div>
+                        <span class="metric-value">95</span>
+                    </div>
+                    <div class="metric-bar">
+                        <span class="metric-label">Accessibility</span>
+                        <div class="metric-progress"><div class="metric-fill" style="width: 92%; background: #10b981;"></div></div>
+                        <span class="metric-value">92</span>
+                    </div>
+                    <div class="metric-bar">
+                        <span class="metric-label">Best Practices</span>
+                        <div class="metric-progress"><div class="metric-fill" style="width: 100%; background: #10b981;"></div></div>
+                        <span class="metric-value">100</span>
+                    </div>
+                    <div class="metric-bar">
+                        <span class="metric-label">SEO</span>
+                        <div class="metric-progress"><div class="metric-fill" style="width: 100%; background: #10b981;"></div></div>
+                        <span class="metric-value">100</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="popup-cta">
+                <a href="#contact" class="btn btn-primary" onclick="closePopup()">Kiểm Tra Website Của Bạn</a>
+            </div>
+        </div>
+    </template>
+
+    <template id="popup-mobile">
+        <div class="popup-header">
+            <div class="popup-icon" style="background: linear-gradient(135deg, #f59e0b, #fbbf24);">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                    <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
+                    <line x1="12" y1="18" x2="12.01" y2="18"/>
+                </svg>
+            </div>
+            <h3>Mobile-First Design</h3>
+        </div>
+        <div class="popup-body">
+            <p class="popup-intro"><strong>70% người dùng</strong> truy cập website từ điện thoại. Chúng tôi thiết kế ưu tiên mobile để đảm bảo trải nghiệm tốt nhất.</p>
+            
+            <h4>📱 Nguyên tắc Mobile-First:</h4>
+            <ul class="popup-list">
+                <li><strong>Touch-Friendly:</strong> Button đủ lớn (min 44px), khoảng cách hợp lý</li>
+                <li><strong>Readable Text:</strong> Font size tối thiểu 16px, line-height thoáng</li>
+                <li><strong>Fast Loading:</strong> Tối ưu cho 3G/4G, không load asset không cần</li>
+                <li><strong>Thumb Zone:</strong> CTA đặt trong vùng ngón cái dễ chạm</li>
+                <li><strong>Simplified Navigation:</strong> Menu hamburger, scroll dọc tự nhiên</li>
+            </ul>
+            
+            <div class="popup-devices">
+                <h4>🖥️ Tương thích mọi thiết bị:</h4>
+                <div class="device-grid">
+                    <div class="device-item">
+                        <span class="device-icon">📱</span>
+                        <span>Mobile</span>
+                        <span class="device-check">✓</span>
+                    </div>
+                    <div class="device-item">
+                        <span class="device-icon">📱</span>
+                        <span>Tablet</span>
+                        <span class="device-check">✓</span>
+                    </div>
+                    <div class="device-item">
+                        <span class="device-icon">💻</span>
+                        <span>Laptop</span>
+                        <span class="device-check">✓</span>
+                    </div>
+                    <div class="device-item">
+                        <span class="device-icon">🖥️</span>
+                        <span>Desktop</span>
+                        <span class="device-check">✓</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="popup-cta">
+                <a href="#contact" class="btn btn-primary" onclick="closePopup()">Xem Demo Responsive</a>
+            </div>
+        </div>
+    </template>
+
+    <template id="popup-support">
+        <div class="popup-header">
+            <div class="popup-icon" style="background: linear-gradient(135deg, #ec4899, #f472b6);">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                </svg>
+            </div>
+            <h3>Hỗ Trợ 30 Ngày Miễn Phí</h3>
+        </div>
+        <div class="popup-body">
+            <p class="popup-intro">Sau khi bàn giao, bạn được <strong>30 ngày hỗ trợ hoàn toàn miễn phí</strong>. Chúng tôi cam kết đồng hành cùng bạn.</p>
+            
+            <h4>🛠️ Nội dung hỗ trợ:</h4>
+            <ul class="popup-list">
+                <li><strong>Bug Fixes:</strong> Sửa mọi lỗi kỹ thuật phát sinh</li>
+                <li><strong>Content Updates:</strong> Hỗ trợ thay đổi text, hình ảnh cơ bản</li>
+                <li><strong>Troubleshooting:</strong> Giải quyết vấn đề hosting, domain</li>
+                <li><strong>Analytics Setup:</strong> Hướng dẫn đọc báo cáo, tracking</li>
+                <li><strong>Performance Monitoring:</strong> Theo dõi và tối ưu nếu cần</li>
+            </ul>
+            
+            <div class="popup-support-channels">
+                <h4>💬 Kênh hỗ trợ:</h4>
+                <div class="support-channels">
+                    <div class="channel-item">
+                        <span class="channel-icon">💬</span>
+                        <div>
+                            <strong>Zalo Chat</strong>
+                            <p>Phản hồi trong 30 phút</p>
+                        </div>
+                    </div>
+                    <div class="channel-item">
+                        <span class="channel-icon">📞</span>
+                        <div>
+                            <strong>Hotline</strong>
+                            <p>9:00 - 21:00 hàng ngày</p>
+                        </div>
+                    </div>
+                    <div class="channel-item">
+                        <span class="channel-icon">📧</span>
+                        <div>
+                            <strong>Email</strong>
+                            <p>Phản hồi trong 24h</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="popup-guarantee">
+                <span class="guarantee-icon">🛡️</span>
+                <p><strong>Cam kết:</strong> Nếu không hài lòng với dịch vụ hỗ trợ, hoàn tiền 100%</p>
+            </div>
+            
+            <div class="popup-cta">
+                <a href="#contact" class="btn btn-primary" onclick="closePopup()">Liên Hệ Ngay</a>
+            </div>
+        </div>
+    </template>
 
     <script src="script.js"></script>
 </body>

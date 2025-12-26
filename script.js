@@ -89,6 +89,73 @@ showcaseItems.forEach(item => {
     });
 });
 
+// ===== Popup Modal Functionality =====
+const popupOverlay = document.getElementById('popupOverlay');
+const popupContent = document.getElementById('popupContent');
+const popupClose = document.getElementById('popupClose');
+
+// Open popup when clicking showcase items
+showcaseItems.forEach(item => {
+    item.addEventListener('click', () => {
+        const popupId = item.getAttribute('data-popup');
+        if (popupId) {
+            openPopup(popupId);
+        }
+    });
+});
+
+function openPopup(popupId) {
+    const template = document.getElementById(`popup-${popupId}`);
+    if (template) {
+        // Clone the template content
+        const content = template.content.cloneNode(true);
+        
+        // Clear previous content and add new
+        popupContent.innerHTML = '';
+        popupContent.appendChild(content);
+        
+        // Show the overlay
+        popupOverlay.classList.add('active');
+        
+        // Prevent body scroll
+        document.body.style.overflow = 'hidden';
+        
+        // Animate metric bars if present
+        setTimeout(() => {
+            const metricFills = popupContent.querySelectorAll('.metric-fill');
+            metricFills.forEach(fill => {
+                const width = fill.style.width;
+                fill.style.width = '0%';
+                setTimeout(() => {
+                    fill.style.width = width;
+                }, 100);
+            });
+        }, 300);
+    }
+}
+
+function closePopup() {
+    popupOverlay.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+// Close popup when clicking close button
+popupClose.addEventListener('click', closePopup);
+
+// Close popup when clicking outside the modal
+popupOverlay.addEventListener('click', (e) => {
+    if (e.target === popupOverlay) {
+        closePopup();
+    }
+});
+
+// Close popup with Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && popupOverlay.classList.contains('active')) {
+        closePopup();
+    }
+});
+
 // ===== Form Submission =====
 const contactForm = document.getElementById('contactForm');
 
