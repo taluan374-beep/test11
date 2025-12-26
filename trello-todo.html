@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trello Todo Board</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0079bf 0%, #5067c5 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .board-header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .board-header h1 {
+            color: white;
+            font-size: 1.8rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .board {
+            display: flex;
+            gap: 15px;
+            overflow-x: auto;
+            padding-bottom: 20px;
+            min-height: calc(100vh - 120px);
+        }
+
+        .column {
+            background: #ebecf0;
+            border-radius: 12px;
+            min-width: 280px;
+            max-width: 280px;
+            padding: 12px;
+            display: flex;
+            flex-direction: column;
+            max-height: calc(100vh - 140px);
+        }
+
+        .column-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 4px;
+            margin-bottom: 10px;
+        }
+
+        .column-title {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: #172b4d;
+        }
+
+        .card-count {
+            background: #ddd;
+            color: #555;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 0.75rem;
+        }
+
+        .cards-container {
+            flex: 1;
+            overflow-y: auto;
+            min-height: 50px;
+        }
+
+        .cards-container::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .cards-container::-webkit-scrollbar-thumb {
+            background: #c4c9cc;
+            border-radius: 3px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 8px;
+            padding: 12px;
+            margin-bottom: 10px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+            cursor: grab;
+            transition: all 0.2s ease;
+            position: relative;
+        }
+
+        .card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transform: translateY(-2px);
+        }
+
+        .card.dragging {
+            opacity: 0.5;
+            cursor: grabbing;
+        }
+
+        .card-content {
+            color: #172b4d;
+            font-size: 0.9rem;
+            word-wrap: break-word;
+            padding-right: 20px;
+        }
+
+        .card-delete {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background: none;
+            border: none;
+            color: #aaa;
+            cursor: pointer;
+            font-size: 1.1rem;
+            opacity: 0;
+            transition: all 0.2s;
+            width: 24px;
+            height: 24px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card:hover .card-delete {
+            opacity: 1;
+        }
+
+        .card-delete:hover {
+            background: #ffebee;
+            color: #e53935;
+        }
+
+        .card-labels {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 8px;
+            flex-wrap: wrap;
+        }
+
+        .label {
+            height: 8px;
+            width: 40px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .label.red { background: #ef5350; }
+        .label.yellow { background: #ffee58; }
+        .label.green { background: #66bb6a; }
+        .label.blue { background: #42a5f5; }
+        .label.purple { background: #ab47bc; }
+
+        .add-card-form {
+            margin-top: 8px;
+        }
+
+        .add-card-btn {
+            width: 100%;
+            padding: 10px;
+            background: transparent;
+            border: none;
+            border-radius: 8px;
+            color: #5e6c84;
+            cursor: pointer;
+            text-align: left;
+            font-size: 0.9rem;
+            transition: background 0.2s;
+        }
+
+        .add-card-btn:hover {
+            background: rgba(0,0,0,0.05);
+            color: #172b4d;
+        }
+
+        .add-card-btn::before {
+            content: '+ ';
+        }
+
+        .card-input-area {
+            display: none;
+        }
+
+        .card-input-area.active {
+            display: block;
+        }
+
+        .card-input {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            resize: none;
+            min-height: 60px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+            margin-bottom: 8px;
+        }
+
+        .card-input:focus {
+            outline: 2px solid #0079bf;
+        }
+
+        .input-actions {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .btn-add {
+            background: #0079bf;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: background 0.2s;
+        }
+
+        .btn-add:hover {
+            background: #026aa7;
+        }
+
+        .btn-cancel {
+            background: none;
+            border: none;
+            color: #6b778c;
+            cursor: pointer;
+            font-size: 1.3rem;
+            padding: 4px 8px;
+        }
+
+        .btn-cancel:hover {
+            color: #172b4d;
+        }
+
+        .label-picker {
+            display: flex;
+            gap: 4px;
+            margin-left: auto;
+        }
+
+        .label-option {
+            width: 24px;
+            height: 24px;
+            border-radius: 4px;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: all 0.2s;
+        }
+
+        .label-option:hover {
+            transform: scale(1.1);
+        }
+
+        .label-option.selected {
+            border-color: #172b4d;
+        }
+
+        .label-option.red { background: #ef5350; }
+        .label-option.yellow { background: #ffee58; }
+        .label-option.green { background: #66bb6a; }
+        .label-option.blue { background: #42a5f5; }
+        .label-option.purple { background: #ab47bc; }
+
+        .drop-zone {
+            min-height: 10px;
+            border-radius: 8px;
+            transition: all 0.2s;
+        }
+
+        .drop-zone.drag-over {
+            background: rgba(0, 121, 191, 0.2);
+            min-height: 60px;
+            border: 2px dashed #0079bf;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 20px;
+            color: #5e6c84;
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 768px) {
+            .column {
+                min-width: 260px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="board-header">
+        <h1>📋 Trello Todo Board</h1>
+    </div>
+
+    <div class="board" id="board">
+        <!-- Columns will be rendered here -->
+    </div>
+
+    <script>
+        // Data
+        let boardData = JSON.parse(localStorage.getItem('trelloBoard')) || {
+            columns: [
+                { id: 'todo', title: '📝 Cần làm', cards: [] },
+                { id: 'doing', title: '🔄 Đang làm', cards: [] },
+                { id: 'done', title: '✅ Hoàn thành', cards: [] }
+            ]
+        };
+
+        // Drag state
+        let draggedCard = null;
+        let draggedFromColumn = null;
+
+        // Render board
+        function renderBoard() {
+            const board = document.getElementById('board');
+            board.innerHTML = boardData.columns.map(column => `
+                <div class="column" data-column-id="${column.id}">
+                    <div class="column-header">
+                        <span class="column-title">${column.title}</span>
+                        <span class="card-count">${column.cards.length}</span>
+                    </div>
+                    <div class="cards-container" 
+                         ondragover="handleDragOver(event)" 
+                         ondrop="handleDrop(event, '${column.id}')"
+                         ondragleave="handleDragLeave(event)">
+                        ${column.cards.length === 0 ? 
+                            '<div class="empty-state">Kéo thả card vào đây</div>' : 
+                            column.cards.map(card => renderCard(card, column.id)).join('')}
+                        <div class="drop-zone"></div>
+                    </div>
+                    <div class="add-card-form">
+                        <button class="add-card-btn" onclick="showAddForm('${column.id}')">
+                            Thêm thẻ
+                        </button>
+                        <div class="card-input-area" id="input-${column.id}">
+                            <textarea class="card-input" 
+                                      id="textarea-${column.id}" 
+                                      placeholder="Nhập tiêu đề cho thẻ này..."
+                                      onkeydown="handleInputKeydown(event, '${column.id}')"></textarea>
+                            <div class="input-actions">
+                                <button class="btn-add" onclick="addCard('${column.id}')">Thêm thẻ</button>
+                                <button class="btn-cancel" onclick="hideAddForm('${column.id}')">×</button>
+                                <div class="label-picker" id="picker-${column.id}">
+                                    <div class="label-option red" onclick="toggleLabel('${column.id}', 'red', this)"></div>
+                                    <div class="label-option yellow" onclick="toggleLabel('${column.id}', 'yellow', this)"></div>
+                                    <div class="label-option green" onclick="toggleLabel('${column.id}', 'green', this)"></div>
+                                    <div class="label-option blue" onclick="toggleLabel('${column.id}', 'blue', this)"></div>
+                                    <div class="label-option purple" onclick="toggleLabel('${column.id}', 'purple', this)"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function renderCard(card, columnId) {
+            const labelsHtml = card.labels && card.labels.length > 0 
+                ? `<div class="card-labels">${card.labels.map(l => `<div class="label ${l}"></div>`).join('')}</div>`
+                : '';
+            
+            return `
+                <div class="card" 
+                     draggable="true" 
+                     data-card-id="${card.id}"
+                     ondragstart="handleDragStart(event, '${card.id}', '${columnId}')"
+                     ondragend="handleDragEnd(event)">
+                    ${labelsHtml}
+                    <div class="card-content">${escapeHtml(card.content)}</div>
+                    <button class="card-delete" onclick="deleteCard('${columnId}', '${card.id}')">×</button>
+                </div>
+            `;
+        }
+
+        // Selected labels for new card
+        let selectedLabels = {};
+
+        function toggleLabel(columnId, color, element) {
+            if (!selectedLabels[columnId]) selectedLabels[columnId] = [];
+            
+            const index = selectedLabels[columnId].indexOf(color);
+            if (index > -1) {
+                selectedLabels[columnId].splice(index, 1);
+                element.classList.remove('selected');
+            } else {
+                selectedLabels[columnId].push(color);
+                element.classList.add('selected');
+            }
+        }
+
+        function showAddForm(columnId) {
+            const form = document.getElementById(`input-${columnId}`);
+            const btn = form.previousElementSibling;
+            form.classList.add('active');
+            btn.style.display = 'none';
+            document.getElementById(`textarea-${columnId}`).focus();
+        }
+
+        function hideAddForm(columnId) {
+            const form = document.getElementById(`input-${columnId}`);
+            const btn = form.previousElementSibling;
+            form.classList.remove('active');
+            btn.style.display = 'block';
+            document.getElementById(`textarea-${columnId}`).value = '';
+            selectedLabels[columnId] = [];
+            document.querySelectorAll(`#picker-${columnId} .label-option`).forEach(el => {
+                el.classList.remove('selected');
+            });
+        }
+
+        function handleInputKeydown(event, columnId) {
+            if (event.key === 'Enter' && !event.shiftKey) {
+                event.preventDefault();
+                addCard(columnId);
+            }
+            if (event.key === 'Escape') {
+                hideAddForm(columnId);
+            }
+        }
+
+        function addCard(columnId) {
+            const textarea = document.getElementById(`textarea-${columnId}`);
+            const content = textarea.value.trim();
+            
+            if (!content) return;
+            
+            const column = boardData.columns.find(c => c.id === columnId);
+            const newCard = {
+                id: 'card-' + Date.now(),
+                content: content,
+                labels: selectedLabels[columnId] || [],
+                createdAt: new Date().toISOString()
+            };
+            
+            column.cards.push(newCard);
+            saveData();
+            renderBoard();
+            
+            // Re-show form for quick adding
+            setTimeout(() => showAddForm(columnId), 50);
+        }
+
+        function deleteCard(columnId, cardId) {
+            const column = boardData.columns.find(c => c.id === columnId);
+            column.cards = column.cards.filter(c => c.id !== cardId);
+            saveData();
+            renderBoard();
+        }
+
+        // Drag and Drop
+        function handleDragStart(event, cardId, columnId) {
+            draggedCard = cardId;
+            draggedFromColumn = columnId;
+            event.target.classList.add('dragging');
+            event.dataTransfer.effectAllowed = 'move';
+        }
+
+        function handleDragEnd(event) {
+            event.target.classList.remove('dragging');
+            document.querySelectorAll('.drop-zone').forEach(zone => {
+                zone.classList.remove('drag-over');
+            });
+        }
+
+        function handleDragOver(event) {
+            event.preventDefault();
+            event.dataTransfer.dropEffect = 'move';
+            const container = event.currentTarget;
+            const dropZone = container.querySelector('.drop-zone');
+            if (dropZone) dropZone.classList.add('drag-over');
+        }
+
+        function handleDragLeave(event) {
+            const container = event.currentTarget;
+            const dropZone = container.querySelector('.drop-zone');
+            if (dropZone && !container.contains(event.relatedTarget)) {
+                dropZone.classList.remove('drag-over');
+            }
+        }
+
+        function handleDrop(event, targetColumnId) {
+            event.preventDefault();
+            
+            if (!draggedCard || !draggedFromColumn) return;
+            
+            // Find and remove card from source
+            const sourceColumn = boardData.columns.find(c => c.id === draggedFromColumn);
+            const cardIndex = sourceColumn.cards.findIndex(c => c.id === draggedCard);
+            const [card] = sourceColumn.cards.splice(cardIndex, 1);
+            
+            // Add to target
+            const targetColumn = boardData.columns.find(c => c.id === targetColumnId);
+            targetColumn.cards.push(card);
+            
+            // Reset
+            draggedCard = null;
+            draggedFromColumn = null;
+            
+            saveData();
+            renderBoard();
+        }
+
+        function saveData() {
+            localStorage.setItem('trelloBoard', JSON.stringify(boardData));
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        // Initialize
+        renderBoard();
+    </script>
+</body>
+</html>
