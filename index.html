@@ -5,17 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LandingPro - Thiết Kế Landing Page Chuyên Nghiệp | Tối Ưu Chi Phí</title>
     <meta name="description" content="Dịch vụ thiết kế landing page chuyên nghiệp cho startup và cá nhân. Tinh gọn - Tối ưu - Hiệu quả. Chỉ từ 2.990.000đ">
+    <meta name="keywords" content="landing page, thiết kế web, startup, marketing, chuyển đổi">
+    <meta property="og:title" content="LandingPro - Landing Page Chuyên Nghiệp, Chi Phí Tinh Gọn">
+    <meta property="og:description" content="Giải pháp landing page tối ưu cho Startup & Cá nhân kinh doanh. Từ 2.990.000đ">
+    <meta property="og:type" content="website">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◆</text></svg>">
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
             <a href="#" class="logo">
-                <span class="logo-icon">◆</span>
+                <svg class="logo-icon-svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                    <defs>
+                        <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#6366f1"/>
+                            <stop offset="100%" style="stop-color:#0ea5e9"/>
+                        </linearGradient>
+                    </defs>
+                    <path d="M16 2L30 16L16 30L2 16L16 2Z" fill="url(#logoGradient)"/>
+                    <path d="M16 8L24 16L16 24L8 16L16 8Z" fill="white" opacity="0.3"/>
+                </svg>
                 LandingPro
             </a>
             <ul class="nav-links">
@@ -35,39 +49,54 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-bg"></div>
+        <div class="hero-bg">
+            <div class="hero-shape shape-1"></div>
+            <div class="hero-shape shape-2"></div>
+            <div class="hero-shape shape-3"></div>
+        </div>
         <div class="container">
             <div class="hero-content">
                 <div class="hero-badge">
-                    <span class="badge-icon">⚡</span>
-                    Dành cho Startup & Cá nhân
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                    </svg>
+                    Dành cho Startup & Cá nhân kinh doanh
                 </div>
                 <h1 class="hero-title">
                     Landing Page <span class="gradient-text">Chuyên Nghiệp</span><br>
                     Chi Phí <span class="gradient-text">Tinh Gọn</span>
                 </h1>
                 <p class="hero-subtitle">
-                    Tối ưu chuyển đổi, trải nghiệm mượt mà, ngân sách hợp lý.<br>
-                    Giải pháp hoàn hảo cho những ai muốn bắt đầu nhanh chóng mà không lo về chi phí.
+                    Bạn cần một trang web bán hàng hiệu quả nhưng ngân sách hạn chế?<br>
+                    <strong>LandingPro</strong> giúp bạn có landing page chuẩn chuyển đổi chỉ trong 3-5 ngày.
                 </p>
                 <div class="hero-cta">
                     <a href="#contact" class="btn btn-primary btn-lg">
-                        Nhận Báo Giá Miễn Phí
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
                         </svg>
+                        Nhận Tư Vấn Miễn Phí
                     </a>
-                    <a href="#portfolio" class="btn btn-outline btn-lg">Xem Portfolio</a>
+                    <a href="#portfolio" class="btn btn-outline btn-lg">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                            <circle cx="8.5" cy="8.5" r="1.5"/>
+                            <polyline points="21 15 16 10 5 21"/>
+                        </svg>
+                        Xem Portfolio
+                    </a>
                 </div>
                 <div class="hero-stats">
                     <div class="stat">
-                        <span class="stat-number">150+</span>
+                        <span class="stat-number" data-target="150">150+</span>
                         <span class="stat-label">Dự án hoàn thành</span>
                     </div>
+                    <div class="stat-divider"></div>
                     <div class="stat">
-                        <span class="stat-number">98%</span>
+                        <span class="stat-number" data-target="98">98%</span>
                         <span class="stat-label">Khách hàng hài lòng</span>
                     </div>
+                    <div class="stat-divider"></div>
                     <div class="stat">
                         <span class="stat-number">3-5</span>
                         <span class="stat-label">Ngày hoàn thành</span>
@@ -81,21 +110,77 @@
                             <div class="browser-dots">
                                 <span></span><span></span><span></span>
                             </div>
-                            <div class="browser-url">yourlandingpage.com</div>
+                            <div class="browser-url">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                                    <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                                </svg>
+                                yourlandingpage.com
+                            </div>
                         </div>
                         <div class="browser-content">
-                            <div class="mock-hero"></div>
-                            <div class="mock-features">
-                                <div class="mock-card"></div>
-                                <div class="mock-card"></div>
-                                <div class="mock-card"></div>
+                            <div class="mock-hero">
+                                <div class="mock-text-lg"></div>
+                                <div class="mock-text-sm"></div>
+                                <div class="mock-btn"></div>
                             </div>
-                            <div class="mock-cta"></div>
+                            <div class="mock-features">
+                                <div class="mock-card">
+                                    <div class="mock-icon"></div>
+                                    <div class="mock-lines">
+                                        <span></span><span></span>
+                                    </div>
+                                </div>
+                                <div class="mock-card">
+                                    <div class="mock-icon"></div>
+                                    <div class="mock-lines">
+                                        <span></span><span></span>
+                                    </div>
+                                </div>
+                                <div class="mock-card">
+                                    <div class="mock-icon"></div>
+                                    <div class="mock-lines">
+                                        <span></span><span></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mock-cta-section">
+                                <div class="mock-cta-btn"></div>
+                            </div>
                         </div>
                     </div>
-                    <div class="floating-element float-1">✨</div>
-                    <div class="floating-element float-2">🚀</div>
-                    <div class="floating-element float-3">💎</div>
+                    <div class="floating-element float-1">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <circle cx="24" cy="24" r="24" fill="#10b981" opacity="0.1"/>
+                            <path d="M20 24l4 4 8-8" stroke="#10b981" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="floating-element float-2">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <circle cx="24" cy="24" r="24" fill="#f59e0b" opacity="0.1"/>
+                            <path d="M24 16v8l4 4" stroke="#f59e0b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                            <circle cx="24" cy="24" r="10" stroke="#f59e0b" stroke-width="2" fill="none"/>
+                        </svg>
+                    </div>
+                    <div class="floating-element float-3">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <circle cx="24" cy="24" r="24" fill="#6366f1" opacity="0.1"/>
+                            <path d="M24 14l2.5 6.5L33 23l-6.5 2.5L24 32l-2.5-6.5L15 23l6.5-2.5L24 14z" fill="#6366f1"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Trusted by -->
+        <div class="trusted-by">
+            <div class="container">
+                <p>Được tin dùng bởi <strong>150+ doanh nghiệp</strong> tại Việt Nam</p>
+                <div class="trusted-logos">
+                    <div class="trust-logo">StartupVN</div>
+                    <div class="trust-logo">TechBase</div>
+                    <div class="trust-logo">GrowthLab</div>
+                    <div class="trust-logo">DigiShop</div>
+                    <div class="trust-logo">EduNext</div>
                 </div>
             </div>
         </div>
@@ -105,29 +190,60 @@
     <section class="pain-points">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">Bạn đang gặp vấn đề?</span>
-                <h2>Những nỗi lo khi <span class="gradient-text">bắt đầu kinh doanh online</span></h2>
+                <span class="section-tag">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M12 8v4M12 16h.01"/>
+                    </svg>
+                    Bạn đang gặp vấn đề?
+                </span>
+                <h2>Những <span class="gradient-text">rào cản</span> khi bắt đầu kinh doanh online</h2>
+                <p>Đây là những vấn đề mà 90% startup và cá nhân kinh doanh gặp phải</p>
             </div>
             <div class="pain-grid">
                 <div class="pain-card">
-                    <div class="pain-icon">💸</div>
+                    <div class="pain-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <circle cx="24" cy="24" r="24" fill="#ef4444" opacity="0.1"/>
+                            <path d="M24 16v8M24 28v4M16 20h16" stroke="#ef4444" stroke-width="2" stroke-linecap="round"/>
+                            <circle cx="24" cy="24" r="10" stroke="#ef4444" stroke-width="2" fill="none"/>
+                        </svg>
+                    </div>
                     <h3>Chi phí quá cao</h3>
-                    <p>Agency báo giá 20-50 triệu cho một website, quá sức với ngân sách startup</p>
+                    <p>Agency báo giá <strong>20-50 triệu</strong> cho một website. Quá sức với ngân sách khởi nghiệp ban đầu.</p>
                 </div>
                 <div class="pain-card">
-                    <div class="pain-icon">⏰</div>
+                    <div class="pain-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <circle cx="24" cy="24" r="24" fill="#f59e0b" opacity="0.1"/>
+                            <circle cx="24" cy="24" r="10" stroke="#f59e0b" stroke-width="2" fill="none"/>
+                            <path d="M24 18v6l4 2" stroke="#f59e0b" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
                     <h3>Thời gian quá lâu</h3>
-                    <p>Chờ 1-2 tháng để có website trong khi cơ hội kinh doanh không đợi ai</p>
+                    <p>Chờ <strong>1-2 tháng</strong> để có website trong khi cơ hội kinh doanh và đối thủ không đợi ai.</p>
                 </div>
                 <div class="pain-card">
-                    <div class="pain-icon">😵</div>
+                    <div class="pain-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <circle cx="24" cy="24" r="24" fill="#8b5cf6" opacity="0.1"/>
+                            <path d="M18 24h12M24 18v12" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M16 16l4 4M32 16l-4 4M16 32l4-4M32 32l-4-4" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
                     <h3>Quá phức tạp</h3>
-                    <p>Không biết bắt đầu từ đâu, công nghệ nào, thiết kế ra sao</p>
+                    <p>Không biết bắt đầu từ đâu? Công nghệ nào? Thiết kế ra sao? Nội dung viết gì?</p>
                 </div>
                 <div class="pain-card">
-                    <div class="pain-icon">📉</div>
+                    <div class="pain-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <circle cx="24" cy="24" r="24" fill="#ec4899" opacity="0.1"/>
+                            <path d="M18 28l4-8 4 4 6-8" stroke="#ec4899" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M32 18v-2h-2" stroke="#ec4899" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
                     <h3>Không chuyển đổi</h3>
-                    <p>Có web nhưng không ai liên hệ, không tạo được leads hay đơn hàng</p>
+                    <p>Có web nhưng <strong>không ai liên hệ</strong>, không tạo được leads hay đơn hàng nào.</p>
                 </div>
             </div>
         </div>
@@ -138,41 +254,62 @@
         <div class="container">
             <div class="solution-content">
                 <div class="solution-text">
-                    <span class="section-tag">Giải pháp</span>
+                    <span class="section-tag">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                            <polyline points="22 4 12 14.01 9 11.01"/>
+                        </svg>
+                        Giải pháp hoàn hảo
+                    </span>
                     <h2>Landing Page <span class="gradient-text">Tối Ưu Chuyển Đổi</span></h2>
                     <p class="solution-desc">
                         Chúng tôi hiểu startup và cá nhân kinh doanh cần gì: 
                         <strong>nhanh, đẹp, hiệu quả, và hợp túi tiền</strong>. 
-                        Không cần website phức tạp, một landing page được thiết kế tốt 
-                        có thể mang lại kết quả tốt hơn nhiều.
+                        Một landing page được thiết kế tốt có thể mang lại kết quả tốt hơn cả website phức tạp.
                     </p>
                     <ul class="solution-list">
                         <li>
-                            <span class="check-icon">✓</span>
+                            <span class="check-icon">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                    <polyline points="20 6 9 17 4 12"/>
+                                </svg>
+                            </span>
                             <div>
                                 <strong>Thiết kế tập trung vào chuyển đổi</strong>
-                                <p>Mỗi element đều được đặt đúng vị trí để dẫn dắt khách hàng hành động</p>
+                                <p>Mỗi element được đặt đúng vị trí để dẫn dắt khách hàng hành động</p>
                             </div>
                         </li>
                         <li>
-                            <span class="check-icon">✓</span>
+                            <span class="check-icon">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                    <polyline points="20 6 9 17 4 12"/>
+                                </svg>
+                            </span>
                             <div>
-                                <strong>Tối ưu tốc độ & SEO</strong>
-                                <p>Load nhanh dưới 3 giây, chuẩn SEO để Google yêu thích</p>
+                                <strong>Tối ưu tốc độ & SEO chuẩn Google</strong>
+                                <p>Load dưới 3 giây, điểm PageSpeed > 90, chuẩn Core Web Vitals</p>
                             </div>
                         </li>
                         <li>
-                            <span class="check-icon">✓</span>
+                            <span class="check-icon">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                    <polyline points="20 6 9 17 4 12"/>
+                                </svg>
+                            </span>
                             <div>
-                                <strong>Responsive hoàn hảo</strong>
-                                <p>Hiển thị đẹp trên mọi thiết bị: desktop, tablet, mobile</p>
+                                <strong>Responsive hoàn hảo mọi thiết bị</strong>
+                                <p>Hiển thị đẹp trên Desktop, Tablet, Mobile - 70% traffic từ điện thoại</p>
                             </div>
                         </li>
                         <li>
-                            <span class="check-icon">✓</span>
+                            <span class="check-icon">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                    <polyline points="20 6 9 17 4 12"/>
+                                </svg>
+                            </span>
                             <div>
-                                <strong>Tích hợp công cụ marketing</strong>
-                                <p>Sẵn sàng kết nối Facebook Pixel, Google Analytics, form thu lead</p>
+                                <strong>Tích hợp đầy đủ công cụ marketing</strong>
+                                <p>Facebook Pixel, Google Analytics, Google Tag Manager, Form thu lead</p>
                             </div>
                         </li>
                     </ul>
@@ -180,32 +317,55 @@
                 <div class="solution-visual">
                     <div class="feature-showcase">
                         <div class="showcase-item active" data-feature="conversion">
-                            <div class="showcase-icon">🎯</div>
-                            <div class="showcase-content">
-                                <h4>Tỷ lệ chuyển đổi cao</h4>
-                                <p>Trung bình tăng 40% so với website thông thường</p>
+                            <div class="showcase-icon">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <circle cx="12" cy="12" r="6"/>
+                                    <circle cx="12" cy="12" r="2"/>
+                                </svg>
                             </div>
+                            <div class="showcase-content">
+                                <h4>Tỷ lệ chuyển đổi tăng 40%</h4>
+                                <p>So với website thông thường không được tối ưu</p>
+                            </div>
+                            <div class="showcase-badge">+40%</div>
                         </div>
                         <div class="showcase-item" data-feature="speed">
-                            <div class="showcase-icon">⚡</div>
-                            <div class="showcase-content">
-                                <h4>Tốc độ siêu nhanh</h4>
-                                <p>Điểm PageSpeed Insights > 90</p>
+                            <div class="showcase-icon">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2">
+                                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                                </svg>
                             </div>
+                            <div class="showcase-content">
+                                <h4>PageSpeed Score > 90</h4>
+                                <p>Tốc độ load trang siêu nhanh, giảm tỷ lệ thoát</p>
+                            </div>
+                            <div class="showcase-badge">90+</div>
                         </div>
                         <div class="showcase-item" data-feature="mobile">
-                            <div class="showcase-icon">📱</div>
-                            <div class="showcase-content">
-                                <h4>Mobile-first design</h4>
-                                <p>70% traffic từ mobile, chúng tôi ưu tiên trải nghiệm mobile</p>
+                            <div class="showcase-icon">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2">
+                                    <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
+                                    <line x1="12" y1="18" x2="12.01" y2="18"/>
+                                </svg>
                             </div>
+                            <div class="showcase-content">
+                                <h4>Mobile-first Design</h4>
+                                <p>Ưu tiên trải nghiệm trên điện thoại di động</p>
+                            </div>
+                            <div class="showcase-badge">70%</div>
                         </div>
                         <div class="showcase-item" data-feature="support">
-                            <div class="showcase-icon">🛠️</div>
-                            <div class="showcase-content">
-                                <h4>Hỗ trợ sau bàn giao</h4>
-                                <p>30 ngày hỗ trợ miễn phí sau khi hoàn thành</p>
+                            <div class="showcase-icon">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#ec4899" stroke-width="2">
+                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                                </svg>
                             </div>
+                            <div class="showcase-content">
+                                <h4>Hỗ trợ 30 ngày miễn phí</h4>
+                                <p>Bảo hành và hỗ trợ kỹ thuật sau bàn giao</p>
+                            </div>
+                            <div class="showcase-badge">30 ngày</div>
                         </div>
                     </div>
                 </div>
@@ -217,42 +377,114 @@
     <section class="process" id="process">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">Quy trình</span>
+                <span class="section-tag light">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="12" y1="20" x2="12" y2="10"/>
+                        <line x1="18" y1="20" x2="18" y2="4"/>
+                        <line x1="6" y1="20" x2="6" y2="16"/>
+                    </svg>
+                    Quy trình làm việc
+                </span>
                 <h2>Chỉ <span class="gradient-text">4 bước</span> để có Landing Page</h2>
-                <p>Đơn giản, minh bạch, nhanh chóng</p>
+                <p>Đơn giản, minh bạch, nhanh chóng - Bạn chỉ cần cung cấp thông tin</p>
             </div>
             <div class="process-timeline">
                 <div class="process-step">
-                    <div class="step-number">01</div>
+                    <div class="step-number">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                        </svg>
+                    </div>
                     <div class="step-content">
+                        <span class="step-label">Bước 1</span>
                         <h3>Tư vấn & Lên brief</h3>
-                        <p>Trao đổi về mục tiêu, đối tượng khách hàng, nội dung và phong cách mong muốn</p>
-                        <span class="step-time">30 phút</span>
+                        <p>Trao đổi về mục tiêu kinh doanh, đối tượng khách hàng, nội dung và phong cách mong muốn</p>
+                        <span class="step-time">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <polyline points="12 6 12 12 16 14"/>
+                            </svg>
+                            30 phút
+                        </span>
                     </div>
                 </div>
                 <div class="process-step">
-                    <div class="step-number">02</div>
+                    <div class="step-number">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                            <circle cx="8.5" cy="8.5" r="1.5"/>
+                            <polyline points="21 15 16 10 5 21"/>
+                        </svg>
+                    </div>
                     <div class="step-content">
+                        <span class="step-label">Bước 2</span>
                         <h3>Thiết kế mockup</h3>
-                        <p>Gửi bản thiết kế preview để bạn duyệt và góp ý chỉnh sửa</p>
-                        <span class="step-time">1-2 ngày</span>
+                        <p>Gửi bản thiết kế preview qua Figma để bạn xem và góp ý chỉnh sửa trước khi code</p>
+                        <span class="step-time">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <polyline points="12 6 12 12 16 14"/>
+                            </svg>
+                            1-2 ngày
+                        </span>
                     </div>
                 </div>
                 <div class="process-step">
-                    <div class="step-number">03</div>
+                    <div class="step-number">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="16 18 22 12 16 6"/>
+                            <polyline points="8 6 2 12 8 18"/>
+                        </svg>
+                    </div>
                     <div class="step-content">
+                        <span class="step-label">Bước 3</span>
                         <h3>Phát triển & Code</h3>
-                        <p>Biến thiết kế thành landing page hoàn chỉnh, tối ưu và responsive</p>
-                        <span class="step-time">2-3 ngày</span>
+                        <p>Biến thiết kế thành landing page hoàn chỉnh, tối ưu performance và responsive</p>
+                        <span class="step-time">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <polyline points="12 6 12 12 16 14"/>
+                            </svg>
+                            2-3 ngày
+                        </span>
                     </div>
                 </div>
                 <div class="process-step">
-                    <div class="step-number">04</div>
-                    <div class="step-content">
-                        <h3>Bàn giao & Hướng dẫn</h3>
-                        <p>Deploy lên hosting, tích hợp domain, hướng dẫn quản lý cơ bản</p>
-                        <span class="step-time">1 ngày</span>
+                    <div class="step-number">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                            <polyline points="22 4 12 14.01 9 11.01"/>
+                        </svg>
                     </div>
+                    <div class="step-content">
+                        <span class="step-label">Bước 4</span>
+                        <h3>Bàn giao & Go Live</h3>
+                        <p>Deploy lên hosting, kết nối domain, setup tracking và hướng dẫn quản lý</p>
+                        <span class="step-time">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <polyline points="12 6 12 12 16 14"/>
+                            </svg>
+                            1 ngày
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="process-summary">
+                <div class="summary-item">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                        <line x1="16" y1="2" x2="16" y2="6"/>
+                        <line x1="8" y1="2" x2="8" y2="6"/>
+                        <line x1="3" y1="10" x2="21" y2="10"/>
+                    </svg>
+                    <span>Tổng thời gian: <strong>3-5 ngày làm việc</strong></span>
+                </div>
+                <div class="summary-item">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                    </svg>
+                    <span>Bảo hành: <strong>30 ngày miễn phí</strong></span>
                 </div>
             </div>
         </div>
@@ -262,13 +494,26 @@
     <section class="pricing" id="pricing">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">Bảng giá</span>
+                <span class="section-tag">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="12" y1="1" x2="12" y2="23"/>
+                        <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                    </svg>
+                    Bảng giá minh bạch
+                </span>
                 <h2>Gói dịch vụ <span class="gradient-text">phù hợp mọi nhu cầu</span></h2>
-                <p>Minh bạch, không phát sinh, thanh toán theo tiến độ</p>
+                <p>Không phát sinh chi phí • Thanh toán theo tiến độ • Hoàn tiền nếu không hài lòng</p>
             </div>
             <div class="pricing-grid">
                 <div class="pricing-card">
                     <div class="pricing-header">
+                        <div class="pricing-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="2">
+                                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                                <path d="M2 17l10 5 10-5"/>
+                                <path d="M2 12l10 5 10-5"/>
+                            </svg>
+                        </div>
                         <h3>Starter</h3>
                         <p>Cho cá nhân mới bắt đầu</p>
                     </div>
@@ -278,20 +523,30 @@
                     </div>
                     <ul class="pricing-features">
                         <li><span class="check">✓</span> 1 trang landing page</li>
-                        <li><span class="check">✓</span> Thiết kế responsive</li>
+                        <li><span class="check">✓</span> Thiết kế responsive chuẩn</li>
                         <li><span class="check">✓</span> Form liên hệ cơ bản</li>
                         <li><span class="check">✓</span> Tối ưu SEO on-page</li>
                         <li><span class="check">✓</span> Hosting 1 năm miễn phí</li>
                         <li><span class="check">✓</span> 1 lần chỉnh sửa</li>
+                        <li><span class="check">✓</span> Bàn giao source code</li>
                         <li class="disabled"><span class="x">✗</span> Tích hợp Pixel/Analytics</li>
-                        <li class="disabled"><span class="x">✗</span> Animation nâng cao</li>
                     </ul>
                     <a href="#contact" class="btn btn-outline btn-block">Chọn gói này</a>
                 </div>
                 
                 <div class="pricing-card featured">
-                    <div class="pricing-badge">Phổ biến nhất</div>
+                    <div class="pricing-badge">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                        </svg>
+                        Phổ biến nhất
+                    </div>
                     <div class="pricing-header">
+                        <div class="pricing-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="2">
+                                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                            </svg>
+                        </div>
                         <h3>Professional</h3>
                         <p>Cho startup muốn tăng tốc</p>
                     </div>
@@ -300,13 +555,13 @@
                         <span class="price-currency">VNĐ</span>
                     </div>
                     <ul class="pricing-features">
-                        <li><span class="check">✓</span> 1 trang landing page</li>
-                        <li><span class="check">✓</span> Thiết kế premium responsive</li>
+                        <li><span class="check">✓</span> 1 trang landing page premium</li>
+                        <li><span class="check">✓</span> Thiết kế custom cao cấp</li>
                         <li><span class="check">✓</span> Form liên hệ + gửi email</li>
                         <li><span class="check">✓</span> Tối ưu SEO on-page</li>
                         <li><span class="check">✓</span> Hosting 1 năm miễn phí</li>
                         <li><span class="check">✓</span> 3 lần chỉnh sửa</li>
-                        <li><span class="check">✓</span> Tích hợp Pixel/Analytics</li>
+                        <li><span class="check">✓</span> Facebook Pixel + Analytics</li>
                         <li><span class="check">✓</span> Animation mượt mà</li>
                     </ul>
                     <a href="#contact" class="btn btn-primary btn-block">Chọn gói này</a>
@@ -314,6 +569,14 @@
                 
                 <div class="pricing-card">
                     <div class="pricing-header">
+                        <div class="pricing-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="2">
+                                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                                <path d="M2 17l10 5 10-5"/>
+                                <path d="M2 12l10 5 10-5"/>
+                                <circle cx="12" cy="12" r="3"/>
+                            </svg>
+                        </div>
                         <h3>Business</h3>
                         <p>Cho doanh nghiệp chuyên nghiệp</p>
                     </div>
@@ -323,19 +586,24 @@
                     </div>
                     <ul class="pricing-features">
                         <li><span class="check">✓</span> Đa trang (tối đa 5 trang)</li>
-                        <li><span class="check">✓</span> Thiết kế custom cao cấp</li>
+                        <li><span class="check">✓</span> Thiết kế UI/UX chuyên sâu</li>
                         <li><span class="check">✓</span> Form + CRM integration</li>
                         <li><span class="check">✓</span> SEO on-page + Schema</li>
                         <li><span class="check">✓</span> Hosting 1 năm miễn phí</li>
                         <li><span class="check">✓</span> Chỉnh sửa không giới hạn</li>
-                        <li><span class="check">✓</span> Full tracking setup</li>
-                        <li><span class="check">✓</span> Animation & Micro-interactions</li>
+                        <li><span class="check">✓</span> Full tracking + GTM setup</li>
+                        <li><span class="check">✓</span> Micro-interactions cao cấp</li>
                     </ul>
                     <a href="#contact" class="btn btn-outline btn-block">Chọn gói này</a>
                 </div>
             </div>
             <div class="pricing-note">
-                <p>💡 <strong>Không tìm thấy gói phù hợp?</strong> Liên hệ để nhận báo giá custom theo nhu cầu của bạn</p>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <line x1="12" y1="16" x2="12" y2="12"/>
+                    <line x1="12" y1="8" x2="12.01" y2="8"/>
+                </svg>
+                <p><strong>Không tìm thấy gói phù hợp?</strong> Liên hệ để nhận báo giá custom theo đúng nhu cầu của bạn</p>
             </div>
         </div>
     </section>
@@ -344,25 +612,53 @@
     <section class="portfolio" id="portfolio">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">Portfolio</span>
+                <span class="section-tag">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                        <circle cx="8.5" cy="8.5" r="1.5"/>
+                        <polyline points="21 15 16 10 5 21"/>
+                    </svg>
+                    Portfolio
+                </span>
                 <h2>Một số dự án <span class="gradient-text">đã thực hiện</span></h2>
+                <p>Các landing page đã giúp khách hàng tăng chuyển đổi và doanh thu</p>
             </div>
             <div class="portfolio-grid">
                 <div class="portfolio-item">
                     <div class="portfolio-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                        <div class="portfolio-preview">
+                            <div class="preview-header"></div>
+                            <div class="preview-content">
+                                <div class="preview-hero"></div>
+                                <div class="preview-cards">
+                                    <span></span><span></span><span></span>
+                                </div>
+                            </div>
+                        </div>
                         <div class="portfolio-overlay">
                             <span class="portfolio-category">SaaS Product</span>
+                            <span class="portfolio-result">+52% Conversion</span>
                         </div>
                     </div>
                     <div class="portfolio-info">
                         <h4>CloudSync App</h4>
-                        <p>Landing page cho ứng dụng đồng bộ dữ liệu</p>
+                        <p>Landing page cho ứng dụng đồng bộ dữ liệu đám mây</p>
                     </div>
                 </div>
                 <div class="portfolio-item">
                     <div class="portfolio-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                        <div class="portfolio-preview">
+                            <div class="preview-header"></div>
+                            <div class="preview-content">
+                                <div class="preview-hero"></div>
+                                <div class="preview-cards">
+                                    <span></span><span></span><span></span>
+                                </div>
+                            </div>
+                        </div>
                         <div class="portfolio-overlay">
                             <span class="portfolio-category">E-commerce</span>
+                            <span class="portfolio-result">+180 Leads/tuần</span>
                         </div>
                     </div>
                     <div class="portfolio-info">
@@ -372,8 +668,18 @@
                 </div>
                 <div class="portfolio-item">
                     <div class="portfolio-image" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                        <div class="portfolio-preview">
+                            <div class="preview-header"></div>
+                            <div class="preview-content">
+                                <div class="preview-hero"></div>
+                                <div class="preview-cards">
+                                    <span></span><span></span><span></span>
+                                </div>
+                            </div>
+                        </div>
                         <div class="portfolio-overlay">
                             <span class="portfolio-category">Education</span>
+                            <span class="portfolio-result">+320 Đăng ký</span>
                         </div>
                     </div>
                     <div class="portfolio-info">
@@ -383,8 +689,18 @@
                 </div>
                 <div class="portfolio-item">
                     <div class="portfolio-image" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
+                        <div class="portfolio-preview">
+                            <div class="preview-header"></div>
+                            <div class="preview-content">
+                                <div class="preview-hero"></div>
+                                <div class="preview-cards">
+                                    <span></span><span></span><span></span>
+                                </div>
+                            </div>
+                        </div>
                         <div class="portfolio-overlay">
                             <span class="portfolio-category">Healthcare</span>
+                            <span class="portfolio-result">+95% Lead Quality</span>
                         </div>
                     </div>
                     <div class="portfolio-info">
@@ -400,17 +716,43 @@
     <section class="testimonials">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">Đánh giá</span>
-                <h2>Khách hàng <span class="gradient-text">nói gì về chúng tôi</span></h2>
+                <span class="section-tag">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                    </svg>
+                    Khách hàng nói gì
+                </span>
+                <h2>Đánh giá từ <span class="gradient-text">khách hàng thực</span></h2>
             </div>
             <div class="testimonials-grid">
                 <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="#f59e0b">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                        </svg>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="#f59e0b">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                        </svg>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="#f59e0b">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                        </svg>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="#f59e0b">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                        </svg>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="#f59e0b">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                        </svg>
+                    </div>
                     <div class="testimonial-content">
-                        <div class="stars">★★★★★</div>
-                        <p>"Mình rất bất ngờ với tốc độ và chất lượng. Chỉ 4 ngày đã có landing page đẹp lung linh, chạy ads 1 tuần đã có 50 leads. Quá đáng đồng tiền!"</p>
+                        <p>"Mình rất bất ngờ với tốc độ và chất lượng. Chỉ <strong>4 ngày đã có landing page đẹp lung linh</strong>, chạy ads 1 tuần đã có 50 leads. Quá đáng đồng tiền!"</p>
                     </div>
                     <div class="testimonial-author">
-                        <div class="author-avatar">TH</div>
+                        <div class="author-avatar">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                                <circle cx="12" cy="7" r="4"/>
+                            </svg>
+                        </div>
                         <div class="author-info">
                             <strong>Trần Hoàng</strong>
                             <span>Founder, TechStart VN</span>
@@ -418,12 +760,33 @@
                     </div>
                 </div>
                 <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="#f59e0b">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                        </svg>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="#f59e0b">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                        </svg>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="#f59e0b">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                        </svg>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="#f59e0b">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                        </svg>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="#f59e0b">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                        </svg>
+                    </div>
                     <div class="testimonial-content">
-                        <div class="stars">★★★★★</div>
-                        <p>"Trước đó mình đã liên hệ 3-4 agency, họ báo giá từ 15-30 triệu. LandingPro chỉ 5 triệu mà chất lượng không hề thua kém. Rất recommend!"</p>
+                        <p>"Trước đó mình đã liên hệ 3-4 agency, họ báo giá từ 15-30 triệu. <strong>LandingPro chỉ 5 triệu mà chất lượng không hề thua kém</strong>. Rất recommend cho các bạn startup!"</p>
                     </div>
                     <div class="testimonial-author">
-                        <div class="author-avatar">NL</div>
+                        <div class="author-avatar">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                                <circle cx="12" cy="7" r="4"/>
+                            </svg>
+                        </div>
                         <div class="author-info">
                             <strong>Nguyễn Linh</strong>
                             <span>Owner, Linh Beauty Spa</span>
@@ -431,12 +794,33 @@
                     </div>
                 </div>
                 <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="#f59e0b">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                        </svg>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="#f59e0b">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                        </svg>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="#f59e0b">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                        </svg>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="#f59e0b">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                        </svg>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="#f59e0b">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                        </svg>
+                    </div>
                     <div class="testimonial-content">
-                        <div class="stars">★★★★★</div>
-                        <p>"Đội ngũ support rất nhiệt tình, giải đáp mọi thắc mắc nhanh chóng. Landing page load siêu nhanh, điểm Google PageSpeed 95 điểm!"</p>
+                        <p>"Đội ngũ support rất nhiệt tình, giải đáp mọi thắc mắc nhanh chóng. Landing page <strong>load siêu nhanh, điểm Google PageSpeed 95 điểm</strong>!"</p>
                     </div>
                     <div class="testimonial-author">
-                        <div class="author-avatar">PD</div>
+                        <div class="author-avatar">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                                <circle cx="12" cy="7" r="4"/>
+                            </svg>
+                        </div>
                         <div class="author-info">
                             <strong>Phạm Đức</strong>
                             <span>CEO, EduOnline</span>
@@ -448,65 +832,90 @@
     </section>
 
     <!-- FAQ Section -->
-    <section class="faq">
+    <section class="faq" id="faq">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">FAQ</span>
-                <h2>Câu hỏi <span class="gradient-text">thường gặp</span></h2>
+                <span class="section-tag">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+                        <line x1="12" y1="17" x2="12.01" y2="17"/>
+                    </svg>
+                    Câu hỏi thường gặp
+                </span>
+                <h2>Giải đáp <span class="gradient-text">thắc mắc</span> của bạn</h2>
             </div>
             <div class="faq-grid">
                 <div class="faq-item">
                     <button class="faq-question">
                         <span>Landing page khác gì với website thông thường?</span>
-                        <span class="faq-icon">+</span>
+                        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="5" x2="12" y2="19"/>
+                            <line x1="5" y1="12" x2="19" y2="12"/>
+                        </svg>
                     </button>
                     <div class="faq-answer">
-                        <p>Landing page là trang đơn tập trung vào một mục tiêu duy nhất (thu lead, bán hàng, đăng ký...), được tối ưu để chuyển đổi khách thăm thành khách hàng. Website thông thường có nhiều trang, nhiều thông tin, dễ làm người dùng phân tâm.</p>
+                        <p>Landing page là trang đơn tập trung vào <strong>một mục tiêu duy nhất</strong> (thu lead, bán hàng, đăng ký...), được tối ưu để chuyển đổi khách thăm thành khách hàng. Website thông thường có nhiều trang, nhiều thông tin, dễ làm người dùng phân tâm và giảm tỷ lệ chuyển đổi.</p>
                     </div>
                 </div>
                 <div class="faq-item">
                     <button class="faq-question">
                         <span>Mình không có nội dung, có được hỗ trợ không?</span>
-                        <span class="faq-icon">+</span>
+                        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="5" x2="12" y2="19"/>
+                            <line x1="5" y1="12" x2="19" y2="12"/>
+                        </svg>
                     </button>
                     <div class="faq-answer">
-                        <p>Có! Chúng tôi sẽ hỗ trợ bạn xây dựng cấu trúc nội dung, đặt câu hỏi để khai thác thông tin sản phẩm/dịch vụ, và tư vấn viết content theo hướng chuyển đổi cao.</p>
+                        <p>Có! Chúng tôi sẽ hỗ trợ bạn xây dựng <strong>cấu trúc nội dung chuẩn chuyển đổi</strong>, đặt câu hỏi để khai thác thông tin sản phẩm/dịch vụ, và tư vấn viết content theo framework đã được chứng minh hiệu quả.</p>
                     </div>
                 </div>
                 <div class="faq-item">
                     <button class="faq-question">
-                        <span>Thanh toán như thế nào?</span>
-                        <span class="faq-icon">+</span>
+                        <span>Thanh toán như thế nào? Có hoàn tiền không?</span>
+                        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="5" x2="12" y2="19"/>
+                            <line x1="5" y1="12" x2="19" y2="12"/>
+                        </svg>
                     </button>
                     <div class="faq-answer">
-                        <p>Thanh toán chia 2 đợt: 50% khi bắt đầu dự án và 50% còn lại khi bàn giao. Chấp nhận chuyển khoản ngân hàng, Momo, hoặc các ví điện tử phổ biến.</p>
+                        <p>Thanh toán chia 2 đợt: <strong>50% khi bắt đầu</strong> và <strong>50% khi bàn giao</strong>. Nếu không hài lòng với bản thiết kế, bạn có thể hủy và được hoàn 100% số tiền đã đặt cọc. Chấp nhận chuyển khoản, Momo, ZaloPay.</p>
                     </div>
                 </div>
                 <div class="faq-item">
                     <button class="faq-question">
                         <span>Sau khi bàn giao, mình có thể tự chỉnh sửa không?</span>
-                        <span class="faq-icon">+</span>
+                        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="5" x2="12" y2="19"/>
+                            <line x1="5" y1="12" x2="19" y2="12"/>
+                        </svg>
                     </button>
                     <div class="faq-answer">
-                        <p>Có! Bạn sẽ nhận toàn bộ source code và hướng dẫn chỉnh sửa nội dung cơ bản. Nếu cần chỉnh sửa phức tạp hơn, chúng tôi có gói maintain hàng tháng với chi phí rất hợp lý.</p>
+                        <p>Có! Bạn sẽ nhận <strong>toàn bộ source code</strong> và hướng dẫn chỉnh sửa nội dung cơ bản (text, hình ảnh). Nếu cần chỉnh sửa phức tạp hơn, chúng tôi có gói maintain hàng tháng chỉ từ 500k/tháng.</p>
                     </div>
                 </div>
                 <div class="faq-item">
                     <button class="faq-question">
-                        <span>Có hỗ trợ chạy quảng cáo không?</span>
-                        <span class="faq-icon">+</span>
+                        <span>Có hỗ trợ setup quảng cáo không?</span>
+                        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="5" x2="12" y2="19"/>
+                            <line x1="5" y1="12" x2="19" y2="12"/>
+                        </svg>
                     </button>
                     <div class="faq-answer">
-                        <p>Dịch vụ landing page không bao gồm chạy ads, nhưng chúng tôi sẽ setup sẵn Facebook Pixel, Google Analytics và các tracking cần thiết để bạn hoặc agency quảng cáo có thể chạy ngay.</p>
+                        <p>Dịch vụ không bao gồm chạy ads, nhưng chúng tôi sẽ <strong>setup sẵn Facebook Pixel, Google Analytics, Google Tag Manager</strong> và tất cả tracking cần thiết để bạn hoặc agency quảng cáo có thể chạy ngay lập tức.</p>
                     </div>
                 </div>
                 <div class="faq-item">
                     <button class="faq-question">
-                        <span>Có bảo hành không?</span>
-                        <span class="faq-icon">+</span>
+                        <span>Bảo hành như thế nào?</span>
+                        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="5" x2="12" y2="19"/>
+                            <line x1="5" y1="12" x2="19" y2="12"/>
+                        </svg>
                     </button>
                     <div class="faq-answer">
-                        <p>Có! Tất cả các gói đều được bảo hành 30 ngày miễn phí sau bàn giao. Chúng tôi sẽ fix mọi lỗi kỹ thuật phát sinh trong thời gian này.</p>
+                        <p>Tất cả các gói đều được <strong>bảo hành 30 ngày miễn phí</strong> sau bàn giao. Chúng tôi sẽ fix mọi lỗi kỹ thuật phát sinh trong thời gian này. Sau 30 ngày, support qua gói maintain hoặc tính phí theo case.</p>
                     </div>
                 </div>
             </div>
@@ -517,17 +926,29 @@
     <section class="cta-section">
         <div class="container">
             <div class="cta-content">
+                <div class="cta-icon">
+                    <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                        <polyline points="22 4 12 14.01 9 11.01"/>
+                    </svg>
+                </div>
                 <h2>Sẵn sàng có Landing Page <span class="gradient-text">chuyển đổi cao</span>?</h2>
-                <p>Đừng để ngân sách hạn hẹp cản trở giấc mơ kinh doanh của bạn. Hãy bắt đầu với một landing page chuyên nghiệp ngay hôm nay!</p>
+                <p>Đừng để ngân sách hạn hẹp cản trở giấc mơ kinh doanh. Bắt đầu với landing page chuyên nghiệp ngay hôm nay!</p>
                 <div class="cta-buttons">
                     <a href="#contact" class="btn btn-primary btn-lg">
-                        Nhận Tư Vấn Miễn Phí
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
                         </svg>
+                        Nhận Tư Vấn Miễn Phí
                     </a>
                 </div>
-                <p class="cta-note">⏱️ Phản hồi trong vòng 2 giờ làm việc</p>
+                <p class="cta-note">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <polyline points="12 6 12 12 16 14"/>
+                    </svg>
+                    Phản hồi trong vòng 2 giờ làm việc
+                </p>
             </div>
         </div>
     </section>
@@ -537,70 +958,138 @@
         <div class="container">
             <div class="contact-wrapper">
                 <div class="contact-info">
-                    <span class="section-tag">Liên hệ</span>
+                    <span class="section-tag">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                        </svg>
+                        Liên hệ ngay
+                    </span>
                     <h2>Hãy để chúng tôi <span class="gradient-text">giúp bạn</span></h2>
-                    <p>Điền form hoặc liên hệ trực tiếp qua các kênh bên dưới. Chúng tôi sẽ phản hồi nhanh nhất có thể!</p>
+                    <p>Điền form bên cạnh hoặc liên hệ trực tiếp qua các kênh dưới đây. Chúng tôi sẽ phản hồi nhanh nhất có thể!</p>
                     
                     <div class="contact-methods">
                         <a href="tel:0901234567" class="contact-method">
-                            <div class="method-icon">📞</div>
+                            <div class="method-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                                </svg>
+                            </div>
                             <div class="method-info">
                                 <strong>Hotline</strong>
                                 <span>090 123 4567</span>
                             </div>
                         </a>
                         <a href="mailto:hello@landingpro.vn" class="contact-method">
-                            <div class="method-icon">✉️</div>
+                            <div class="method-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                    <polyline points="22,6 12,13 2,6"/>
+                                </svg>
+                            </div>
                             <div class="method-info">
                                 <strong>Email</strong>
                                 <span>hello@landingpro.vn</span>
                             </div>
                         </a>
                         <a href="https://zalo.me/0901234567" class="contact-method">
-                            <div class="method-icon">💬</div>
+                            <div class="method-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+                                </svg>
+                            </div>
                             <div class="method-info">
                                 <strong>Zalo</strong>
-                                <span>Chat ngay</span>
+                                <span>Chat ngay - Phản hồi nhanh</span>
                             </div>
                         </a>
+                    </div>
+                    
+                    <div class="contact-guarantee">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        </svg>
+                        <p><strong>Cam kết:</strong> Hoàn tiền 100% nếu không hài lòng với thiết kế</p>
                     </div>
                 </div>
                 
                 <form class="contact-form" id="contactForm">
+                    <div class="form-header">
+                        <h3>Nhận tư vấn miễn phí</h3>
+                        <p>Điền thông tin, chúng tôi sẽ liên hệ trong 2 giờ</p>
+                    </div>
                     <div class="form-group">
-                        <label for="name">Họ tên *</label>
+                        <label for="name">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                                <circle cx="12" cy="7" r="4"/>
+                            </svg>
+                            Họ tên *
+                        </label>
                         <input type="text" id="name" name="name" required placeholder="Nhập họ tên của bạn">
                     </div>
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="email">Email *</label>
+                            <label for="email">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                    <polyline points="22,6 12,13 2,6"/>
+                                </svg>
+                                Email *
+                            </label>
                             <input type="email" id="email" name="email" required placeholder="email@example.com">
                         </div>
                         <div class="form-group">
-                            <label for="phone">Số điện thoại *</label>
+                            <label for="phone">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                                </svg>
+                                Số điện thoại *
+                            </label>
                             <input type="tel" id="phone" name="phone" required placeholder="090 xxx xxxx">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="package">Gói dịch vụ quan tâm</label>
+                        <label for="package">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="12" y1="1" x2="12" y2="23"/>
+                                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                            </svg>
+                            Gói dịch vụ quan tâm
+                        </label>
                         <select id="package" name="package">
                             <option value="">-- Chọn gói --</option>
                             <option value="starter">Starter - 2.990.000đ</option>
-                            <option value="professional">Professional - 4.990.000đ</option>
+                            <option value="professional">Professional - 4.990.000đ (Phổ biến)</option>
                             <option value="business">Business - 7.990.000đ</option>
                             <option value="custom">Custom (Liên hệ báo giá)</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="message">Mô tả ngắn về dự án</label>
-                        <textarea id="message" name="message" rows="4" placeholder="Bạn cần landing page cho sản phẩm/dịch vụ gì? Có yêu cầu đặc biệt nào không?"></textarea>
+                        <label for="message">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="17" y1="10" x2="3" y2="10"/>
+                                <line x1="21" y1="6" x2="3" y2="6"/>
+                                <line x1="21" y1="14" x2="3" y2="14"/>
+                                <line x1="17" y1="18" x2="3" y2="18"/>
+                            </svg>
+                            Mô tả ngắn về dự án
+                        </label>
+                        <textarea id="message" name="message" rows="4" placeholder="Bạn cần landing page cho sản phẩm/dịch vụ gì? Mục tiêu chính là gì? (thu lead, bán hàng, giới thiệu...)"></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary btn-block btn-lg">
-                        Gửi yêu cầu tư vấn
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+                            <line x1="22" y1="2" x2="11" y2="13"/>
+                            <polygon points="22 2 15 22 11 13 2 9 22 2"/>
                         </svg>
+                        Gửi yêu cầu tư vấn
                     </button>
+                    <p class="form-note">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                        </svg>
+                        Thông tin của bạn được bảo mật tuyệt đối
+                    </p>
                 </form>
             </div>
         </div>
@@ -612,10 +1101,40 @@
             <div class="footer-content">
                 <div class="footer-brand">
                     <a href="#" class="logo">
-                        <span class="logo-icon">◆</span>
+                        <svg class="logo-icon-svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                            <defs>
+                                <linearGradient id="logoGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#6366f1"/>
+                                    <stop offset="100%" style="stop-color:#0ea5e9"/>
+                                </linearGradient>
+                            </defs>
+                            <path d="M16 2L30 16L16 30L2 16L16 2Z" fill="url(#logoGradient2)"/>
+                            <path d="M16 8L24 16L16 24L8 16L16 8Z" fill="white" opacity="0.3"/>
+                        </svg>
                         LandingPro
                     </a>
-                    <p>Thiết kế Landing Page chuyên nghiệp, tối ưu chi phí cho Startup và Cá nhân kinh doanh.</p>
+                    <p>Thiết kế Landing Page chuyên nghiệp, tối ưu chi phí cho Startup và Cá nhân kinh doanh tại Việt Nam.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Instagram">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="LinkedIn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                                <rect x="2" y="9" width="4" height="12"/>
+                                <circle cx="4" cy="4" r="2"/>
+                            </svg>
+                        </a>
+                    </div>
                 </div>
                 <div class="footer-links">
                     <h4>Dịch vụ</h4>
@@ -623,14 +1142,16 @@
                         <li><a href="#services">Landing Page</a></li>
                         <li><a href="#pricing">Bảng giá</a></li>
                         <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#process">Quy trình</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
                     <h4>Hỗ trợ</h4>
                     <ul>
-                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#faq">Câu hỏi thường gặp</a></li>
                         <li><a href="#contact">Liên hệ</a></li>
-                        <li><a href="#">Chính sách</a></li>
+                        <li><a href="#">Chính sách bảo mật</a></li>
+                        <li><a href="#">Điều khoản dịch vụ</a></li>
                     </ul>
                 </div>
             </div>
@@ -643,10 +1164,14 @@
     <!-- Floating CTA -->
     <div class="floating-cta">
         <a href="https://zalo.me/0901234567" class="float-btn zalo" title="Chat Zalo">
-            <span>💬</span>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+            </svg>
         </a>
         <a href="tel:0901234567" class="float-btn phone" title="Gọi ngay">
-            <span>📞</span>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
         </a>
     </div>
 
