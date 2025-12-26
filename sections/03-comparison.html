@@ -1,0 +1,192 @@
+<!-- ============================================
+    COMPARISON SECTION - LandingPro
+============================================ -->
+
+<!-- ===== HTML ===== -->
+<section class="comparison">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="9 11 12 14 22 4"/>
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+                </svg>
+                So sánh chi tiết
+            </span>
+            <h2>Tại sao chọn <span class="gradient-text">LandingPro?</span></h2>
+        </div>
+        <div class="comparison-table">
+            <div class="comparison-header">
+                <div class="comparison-feature">Tiêu chí</div>
+                <div class="comparison-them">Agency truyền thống</div>
+                <div class="comparison-us">LandingPro</div>
+            </div>
+            <div class="comparison-row">
+                <div class="comparison-feature">💰 Chi phí</div>
+                <div class="comparison-them bad">15 - 50 triệu</div>
+                <div class="comparison-us good">2.99 - 7.99 triệu</div>
+            </div>
+            <div class="comparison-row">
+                <div class="comparison-feature">⏱️ Thời gian</div>
+                <div class="comparison-them bad">2 - 4 tuần</div>
+                <div class="comparison-us good">3 - 5 ngày</div>
+            </div>
+            <div class="comparison-row">
+                <div class="comparison-feature">📱 Responsive</div>
+                <div class="comparison-them neutral">Có (thêm phí)</div>
+                <div class="comparison-us good">Bao gồm ✓</div>
+            </div>
+            <div class="comparison-row">
+                <div class="comparison-feature">📊 Tích hợp Analytics</div>
+                <div class="comparison-them bad">Không có</div>
+                <div class="comparison-us good">Đầy đủ ✓</div>
+            </div>
+            <div class="comparison-row">
+                <div class="comparison-feature">🛠️ Chỉnh sửa</div>
+                <div class="comparison-them bad">Tính phí mỗi lần</div>
+                <div class="comparison-us good">1-∞ lần miễn phí</div>
+            </div>
+            <div class="comparison-row">
+                <div class="comparison-feature">🏠 Hosting</div>
+                <div class="comparison-them bad">Không có</div>
+                <div class="comparison-us good">1 năm miễn phí ✓</div>
+            </div>
+            <div class="comparison-row">
+                <div class="comparison-feature">💬 Hỗ trợ</div>
+                <div class="comparison-them neutral">Giờ hành chính</div>
+                <div class="comparison-us good">24/7 qua Zalo</div>
+            </div>
+        </div>
+        <div class="comparison-cta">
+            <p>Tiết kiệm đến <strong>80%</strong> chi phí so với agency truyền thống</p>
+            <a href="#pricing" class="btn btn-primary">Xem bảng giá chi tiết</a>
+        </div>
+    </div>
+</section>
+
+<!-- ===== CSS ===== -->
+<style>
+.comparison { 
+    background: var(--white); 
+    padding: 100px 0; 
+}
+
+.comparison-table {
+    max-width: 900px;
+    margin: 0 auto;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--gray-100);
+}
+
+.comparison-header,
+.comparison-row {
+    display: grid;
+    grid-template-columns: 2fr 1.5fr 1.5fr;
+    gap: 0;
+}
+
+.comparison-header {
+    background: var(--dark);
+    color: var(--white);
+    font-weight: 700;
+}
+
+.comparison-header > div {
+    padding: 20px 24px;
+    text-align: center;
+}
+
+.comparison-header .comparison-feature { text-align: left; }
+.comparison-header .comparison-us { background: var(--primary); }
+
+.comparison-row {
+    border-bottom: 1px solid var(--gray-100);
+}
+
+.comparison-row:last-child { border-bottom: none; }
+
+.comparison-row > div {
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+}
+
+.comparison-row .comparison-feature {
+    font-weight: 600;
+    color: var(--dark);
+    gap: 8px;
+}
+
+.comparison-row .comparison-them,
+.comparison-row .comparison-us {
+    justify-content: center;
+    font-weight: 500;
+}
+
+.comparison-row .comparison-them.bad {
+    background: rgba(239, 68, 68, 0.05);
+    color: var(--danger);
+}
+
+.comparison-row .comparison-them.neutral {
+    background: rgba(245, 158, 11, 0.05);
+    color: var(--accent);
+}
+
+.comparison-row .comparison-us.good {
+    background: rgba(16, 185, 129, 0.1);
+    color: var(--success);
+    font-weight: 700;
+}
+
+.comparison-cta {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.comparison-cta p {
+    font-size: 1.2rem;
+    color: var(--gray-600);
+    margin-bottom: 20px;
+}
+
+.comparison-cta strong {
+    color: var(--primary);
+    font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .comparison { padding: 60px 0; }
+    
+    .comparison-header,
+    .comparison-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .comparison-header > div,
+    .comparison-row > div {
+        padding: 12px 16px;
+        justify-content: flex-start;
+    }
+    
+    .comparison-header .comparison-feature { display: none; }
+    
+    .comparison-row .comparison-feature {
+        background: var(--gray-50);
+        font-size: 0.85rem;
+    }
+    
+    .comparison-row .comparison-them::before {
+        content: 'Agency: ';
+        font-weight: 400;
+        color: var(--gray-500);
+    }
+    
+    .comparison-row .comparison-us::before {
+        content: 'LandingPro: ';
+        font-weight: 400;
+    }
+}
+</style>
