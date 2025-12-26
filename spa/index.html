@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serene Spa - Chăm Sóc Da Chuyên Sâu | Thư Giãn & Làm Đẹp</title>
+    <meta name="description" content="Serene Spa - Spa cao cấp tại Sài Gòn. Dịch vụ chăm sóc da, massage thư giãn, trị liệu body. Đặt lịch ngay - Giảm 30% khách mới.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
+</head>
+<body>
+    <!-- Promo Banner -->
+    <div class="promo-banner">
+        <p>🎁 <strong>Ưu đãi khách mới:</strong> Giảm 30% tất cả dịch vụ + Tặng 1 buổi massage cổ vai gáy</p>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">
+                <span class="logo-icon">🌿</span>
+                Serene<span class="logo-accent">Spa</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#services">Dịch vụ</a></li>
+                <li><a href="#about">Về chúng tôi</a></li>
+                <li><a href="#pricing">Bảng giá</a></li>
+                <li><a href="#reviews">Đánh giá</a></li>
+                <li><a href="#booking" class="btn btn-nav">Đặt Lịch Ngay</a></li>
+            </ul>
+            <button class="mobile-menu-btn" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-bg"></div>
+        <div class="container">
+            <div class="hero-content">
+                <span class="hero-tag">✨ Spa Cao Cấp Sài Gòn</span>
+                <h1>Thư Giãn Tâm Hồn<br><span class="text-gradient">Tỏa Sáng Làn Da</span></h1>
+                <p class="hero-subtitle">
+                    Trải nghiệm liệu trình chăm sóc da và massage thư giãn đẳng cấp 5 sao.<br>
+                    Để mỗi ngày đều là ngày bạn đẹp nhất.
+                </p>
+                <div class="hero-cta">
+                    <a href="#booking" class="btn btn-primary btn-lg">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                            <line x1="16" y1="2" x2="16" y2="6"/>
+                            <line x1="8" y1="2" x2="8" y2="6"/>
+                            <line x1="3" y1="10" x2="21" y2="10"/>
+                        </svg>
+                        Đặt Lịch Hẹn
+                    </a>
+                    <a href="tel:0901234567" class="btn btn-outline-light btn-lg">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        </svg>
+                        Hotline: 090 123 4567
+                    </a>
+                </div>
+                <div class="hero-features">
+                    <div class="feature">
+                        <span class="feature-icon">⭐</span>
+                        <span>4.9/5 đánh giá</span>
+                    </div>
+                    <div class="feature">
+                        <span class="feature-icon">👥</span>
+                        <span>5000+ khách hàng</span>
+                    </div>
+                    <div class="feature">
+                        <span class="feature-icon">🏆</span>
+                        <span>10+ năm kinh nghiệm</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Khám phá</span>
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Dịch vụ của chúng tôi</span>
+                <h2>Liệu Trình <span class="text-gradient">Chăm Sóc Toàn Diện</span></h2>
+                <p>Được thiết kế riêng cho từng loại da và nhu cầu của bạn</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-image" style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);">
+                        <span class="service-emoji">💆‍♀️</span>
+                    </div>
+                    <div class="service-content">
+                        <h3>Chăm Sóc Da Mặt</h3>
+                        <p>Làm sạch sâu, dưỡng ẩm, trẻ hóa da với công nghệ hiện đại và mỹ phẩm cao cấp từ Hàn Quốc.</p>
+                        <div class="service-meta">
+                            <span class="service-duration">⏱️ 60-90 phút</span>
+                            <span class="service-price">Từ 399K</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">
+                        <span class="service-emoji">💪</span>
+                    </div>
+                    <div class="service-content">
+                        <h3>Massage Body</h3>
+                        <p>Giải tỏa căng thẳng, thư giãn cơ bắp với kỹ thuật massage truyền thống kết hợp tinh dầu thiên nhiên.</p>
+                        <div class="service-meta">
+                            <span class="service-duration">⏱️ 60-120 phút</span>
+                            <span class="service-price">Từ 499K</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image" style="background: linear-gradient(135deg, #d299c2 0%, #fef9d7 100%);">
+                        <span class="service-emoji">✨</span>
+                    </div>
+                    <div class="service-content">
+                        <h3>Trị Liệu Mụn</h3>
+                        <p>Điều trị mụn chuyên sâu, kiểm soát dầu nhờn, phục hồi da tổn thương với liệu trình cá nhân hóa.</p>
+                        <div class="service-meta">
+                            <span class="service-duration">⏱️ 90 phút</span>
+                            <span class="service-price">Từ 599K</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                        <span class="service-emoji">💎</span>
+                    </div>
+                    <div class="service-content">
+                        <h3>Trẻ Hóa Da</h3>
+                        <p>Công nghệ Hifu, RF, căng bóng da, xóa nhăn không xâm lấn. Kết quả thấy ngay sau 1 liệu trình.</p>
+                        <div class="service-meta">
+                            <span class="service-duration">⏱️ 45-60 phút</span>
+                            <span class="service-price">Từ 1.299K</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="services-cta">
+                <a href="#booking" class="btn btn-primary btn-lg">Xem Tất Cả Dịch Vụ</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-images">
+                    <div class="about-image main">
+                        <div class="image-placeholder" style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);">
+                            <span>🧖‍♀️</span>
+                        </div>
+                    </div>
+                    <div class="about-image secondary">
+                        <div class="image-placeholder" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">
+                            <span>🌸</span>
+                        </div>
+                    </div>
+                    <div class="about-badge">
+                        <span class="badge-number">10+</span>
+                        <span class="badge-text">Năm kinh nghiệm</span>
+                    </div>
+                </div>
+                <div class="about-content">
+                    <span class="section-tag">Về Serene Spa</span>
+                    <h2>Nơi <span class="text-gradient">Vẻ Đẹp</span> Được Tôn Vinh</h2>
+                    <p class="about-text">
+                        Serene Spa được thành lập với sứ mệnh mang đến cho phụ nữ Việt những trải nghiệm 
+                        chăm sóc da và thư giãn đẳng cấp quốc tế ngay tại Sài Gòn.
+                    </p>
+                    <ul class="about-features">
+                        <li>
+                            <span class="check-icon">✓</span>
+                            <div>
+                                <strong>Đội ngũ chuyên gia</strong>
+                                <p>Kỹ thuật viên được đào tạo bài bản tại Hàn Quốc</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="check-icon">✓</span>
+                            <div>
+                                <strong>Mỹ phẩm cao cấp</strong>
+                                <p>Sử dụng 100% sản phẩm chính hãng từ các thương hiệu hàng đầu</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="check-icon">✓</span>
+                            <div>
+                                <strong>Không gian sang trọng</strong>
+                                <p>Thiết kế đẹp, yên tĩnh, riêng tư cho trải nghiệm hoàn hảo</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="check-icon">✓</span>
+                            <div>
+                                <strong>Cam kết hiệu quả</strong>
+                                <p>Hoàn tiền nếu không hài lòng sau liệu trình đầu tiên</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Bảng giá dịch vụ</span>
+                <h2>Gói Liệu Trình <span class="text-gradient">Ưu Đãi</span></h2>
+                <p>Tiết kiệm đến 40% khi mua gói combo</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <span class="pricing-icon">🌱</span>
+                        <h3>Gói Basic</h3>
+                        <p>Chăm sóc da cơ bản</p>
+                    </div>
+                    <div class="pricing-price">
+                        <span class="price-old">1.500.000đ</span>
+                        <span class="price-current">990.000</span>
+                        <span class="price-unit">VNĐ/buổi</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>✓ Làm sạch da chuyên sâu</li>
+                        <li>✓ Massage mặt thư giãn</li>
+                        <li>✓ Đắp mặt nạ dưỡng ẩm</li>
+                        <li>✓ Tư vấn chế độ skincare</li>
+                        <li class="disabled">✗ Điều trị chuyên sâu</li>
+                    </ul>
+                    <a href="#booking" class="btn btn-outline btn-block">Đặt Lịch</a>
+                </div>
+                
+                <div class="pricing-card featured">
+                    <div class="pricing-badge">Phổ biến nhất</div>
+                    <div class="pricing-header">
+                        <span class="pricing-icon">🌸</span>
+                        <h3>Gói Premium</h3>
+                        <p>Trọn gói chăm sóc</p>
+                    </div>
+                    <div class="pricing-price">
+                        <span class="price-old">3.000.000đ</span>
+                        <span class="price-current">1.890.000</span>
+                        <span class="price-unit">VNĐ/buổi</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>✓ Tất cả dịch vụ Basic</li>
+                        <li>✓ Massage body 60 phút</li>
+                        <li>✓ Điều trị mụn/thâm</li>
+                        <li>✓ Serum collagen cao cấp</li>
+                        <li>✓ Tặng 1 buổi massage cổ</li>
+                    </ul>
+                    <a href="#booking" class="btn btn-primary btn-block">Đặt Lịch Ngay</a>
+                </div>
+                
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <span class="pricing-icon">💎</span>
+                        <h3>Gói VIP</h3>
+                        <p>Trải nghiệm đẳng cấp</p>
+                    </div>
+                    <div class="pricing-price">
+                        <span class="price-old">5.000.000đ</span>
+                        <span class="price-current">2.990.000</span>
+                        <span class="price-unit">VNĐ/buổi</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>✓ Tất cả dịch vụ Premium</li>
+                        <li>✓ Trẻ hóa da công nghệ cao</li>
+                        <li>✓ Phòng VIP riêng biệt</li>
+                        <li>✓ Set quà tặng skincare</li>
+                        <li>✓ Membership 1 năm (-20%)</li>
+                    </ul>
+                    <a href="#booking" class="btn btn-outline btn-block">Đặt Lịch</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews" id="reviews">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Khách hàng nói gì</span>
+                <h2>Hơn <span class="text-gradient">5000+ Khách Hàng</span> Tin Tưởng</h2>
+            </div>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Da mình cải thiện rõ rệt sau 3 buổi. Mụn giảm hẳn, da sáng và mịn hơn nhiều. Nhân viên tư vấn rất tận tình!"</p>
+                    <div class="review-author">
+                        <div class="author-avatar" style="background: linear-gradient(135deg, #ffecd2, #fcb69f);">TL</div>
+                        <div class="author-info">
+                            <strong>Thanh Lan</strong>
+                            <span>Quận 1, TP.HCM</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Không gian spa rất đẹp và yên tĩnh. Massage cực kỳ thư giãn, giảm hẳn đau vai gáy. Sẽ quay lại thường xuyên!"</p>
+                    <div class="review-author">
+                        <div class="author-avatar" style="background: linear-gradient(135deg, #a8edea, #fed6e3);">MT</div>
+                        <div class="author-info">
+                            <strong>Minh Thư</strong>
+                            <span>Quận 7, TP.HCM</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Giá hợp lý, chất lượng dịch vụ tuyệt vời. Mình đã giới thiệu cho nhiều bạn bè và ai cũng hài lòng."</p>
+                    <div class="review-author">
+                        <div class="author-avatar" style="background: linear-gradient(135deg, #d299c2, #fef9d7);">HA</div>
+                        <div class="author-info">
+                            <strong>Hoàng Anh</strong>
+                            <span>Quận 3, TP.HCM</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section class="booking" id="booking">
+        <div class="container">
+            <div class="booking-wrapper">
+                <div class="booking-info">
+                    <span class="section-tag light">Đặt lịch hẹn</span>
+                    <h2>Sẵn Sàng Cho <span class="text-gradient">Ngày Đẹp</span> Của Bạn?</h2>
+                    <p>Điền form hoặc liên hệ trực tiếp để được tư vấn và đặt lịch nhanh nhất</p>
+                    
+                    <div class="contact-methods">
+                        <a href="tel:0901234567" class="contact-method">
+                            <span class="method-icon">📞</span>
+                            <div>
+                                <strong>Hotline</strong>
+                                <span>090 123 4567</span>
+                            </div>
+                        </a>
+                        <a href="https://zalo.me/0901234567" class="contact-method">
+                            <span class="method-icon">💬</span>
+                            <div>
+                                <strong>Zalo</strong>
+                                <span>Chat ngay</span>
+                            </div>
+                        </a>
+                        <div class="contact-method">
+                            <span class="method-icon">📍</span>
+                            <div>
+                                <strong>Địa chỉ</strong>
+                                <span>123 Nguyễn Huệ, Q.1, TP.HCM</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="opening-hours">
+                        <h4>🕐 Giờ mở cửa</h4>
+                        <p>Thứ 2 - Chủ nhật: 9:00 - 21:00</p>
+                    </div>
+                </div>
+                
+                <form class="booking-form" id="bookingForm">
+                    <h3>Đặt Lịch Ngay</h3>
+                    <p>Nhận ưu đãi giảm 30% cho lần đầu</p>
+                    
+                    <div class="form-group">
+                        <input type="text" name="name" required placeholder="Họ tên của bạn *">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="tel" name="phone" required placeholder="Số điện thoại *">
+                        </div>
+                        <div class="form-group">
+                            <input type="date" name="date" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <select name="service" required>
+                            <option value="">-- Chọn dịch vụ --</option>
+                            <option value="facial">Chăm sóc da mặt</option>
+                            <option value="massage">Massage body</option>
+                            <option value="acne">Trị liệu mụn</option>
+                            <option value="anti-aging">Trẻ hóa da</option>
+                            <option value="combo">Gói combo</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="note" rows="3" placeholder="Ghi chú (tình trạng da, yêu cầu đặc biệt...)"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block btn-lg">
+                        Đặt Lịch Hẹn
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </button>
+                    <p class="form-note">🔒 Thông tin được bảo mật. Chúng tôi sẽ gọi xác nhận trong 30 phút.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <span class="logo-icon">🌿</span>
+                        Serene<span class="logo-accent">Spa</span>
+                    </a>
+                    <p>Spa cao cấp tại Sài Gòn - Nơi vẻ đẹp được tôn vinh</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook">📘</a>
+                        <a href="#" aria-label="Instagram">📷</a>
+                        <a href="#" aria-label="TikTok">🎵</a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Dịch vụ</h4>
+                    <ul>
+                        <li><a href="#services">Chăm sóc da</a></li>
+                        <li><a href="#services">Massage body</a></li>
+                        <li><a href="#services">Trị liệu mụn</a></li>
+                        <li><a href="#services">Trẻ hóa da</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Thông tin</h4>
+                    <ul>
+                        <li><a href="#about">Về chúng tôi</a></li>
+                        <li><a href="#pricing">Bảng giá</a></li>
+                        <li><a href="#reviews">Đánh giá</a></li>
+                        <li><a href="#booking">Liên hệ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 Serene Spa. Made with 💚 in Saigon</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Buttons -->
+    <div class="floating-buttons">
+        <a href="https://zalo.me/0901234567" class="float-btn zalo" title="Chat Zalo">💬</a>
+        <a href="tel:0901234567" class="float-btn phone" title="Gọi ngay">📞</a>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
