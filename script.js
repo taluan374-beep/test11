@@ -1,3 +1,30 @@
+// ===== Countdown Timer =====
+function updateCountdown() {
+    const countdown = document.getElementById('countdown');
+    if (!countdown) return;
+    
+    // Set end date to end of current month
+    const now = new Date();
+    const endOfMonth = new Date(now.getFullYear(), now.getMonth() + 1, 0, 23, 59, 59);
+    const diff = endOfMonth - now;
+    
+    if (diff <= 0) {
+        countdown.textContent = 'Hết hạn!';
+        return;
+    }
+    
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+    
+    countdown.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+}
+
+// Update countdown every second
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
 // ===== Mobile Menu Toggle =====
 const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
 const navLinks = document.querySelector('.nav-links');
