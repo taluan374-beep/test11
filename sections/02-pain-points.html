@@ -1,0 +1,130 @@
+<!-- ============================================
+    PAIN POINTS SECTION - LandingPro
+============================================ -->
+
+<!-- ===== HTML ===== -->
+<section class="pain-points">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <path d="M12 8v4M12 16h.01"/>
+                </svg>
+                Bạn đang gặp vấn đề?
+            </span>
+            <h2>Những <span class="gradient-text">rào cản</span> khi bắt đầu kinh doanh online</h2>
+            <p>Đây là những vấn đề mà 90% startup và cá nhân kinh doanh gặp phải</p>
+        </div>
+        <div class="pain-grid">
+            <div class="pain-card">
+                <div class="pain-icon">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                        <circle cx="24" cy="24" r="24" fill="#ef4444" opacity="0.1"/>
+                        <path d="M24 16v8M24 28v4M16 20h16" stroke="#ef4444" stroke-width="2" stroke-linecap="round"/>
+                        <circle cx="24" cy="24" r="10" stroke="#ef4444" stroke-width="2" fill="none"/>
+                    </svg>
+                </div>
+                <h3>Chi phí quá cao</h3>
+                <p>Agency báo giá <strong>20-50 triệu</strong> cho một website. Quá sức với ngân sách khởi nghiệp ban đầu.</p>
+            </div>
+            <div class="pain-card">
+                <div class="pain-icon">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                        <circle cx="24" cy="24" r="24" fill="#f59e0b" opacity="0.1"/>
+                        <circle cx="24" cy="24" r="10" stroke="#f59e0b" stroke-width="2" fill="none"/>
+                        <path d="M24 18v6l4 2" stroke="#f59e0b" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <h3>Thời gian quá lâu</h3>
+                <p>Chờ <strong>1-2 tháng</strong> để có website trong khi cơ hội kinh doanh và đối thủ không đợi ai.</p>
+            </div>
+            <div class="pain-card">
+                <div class="pain-icon">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                        <circle cx="24" cy="24" r="24" fill="#8b5cf6" opacity="0.1"/>
+                        <path d="M18 24h12M24 18v12" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M16 16l4 4M32 16l-4 4M16 32l4-4M32 32l-4-4" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <h3>Quá phức tạp</h3>
+                <p>Không biết bắt đầu từ đâu? Công nghệ nào? Thiết kế ra sao? Nội dung viết gì?</p>
+            </div>
+            <div class="pain-card">
+                <div class="pain-icon">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                        <circle cx="24" cy="24" r="24" fill="#ec4899" opacity="0.1"/>
+                        <path d="M18 28l4-8 4 4 6-8" stroke="#ec4899" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M32 18v-2h-2" stroke="#ec4899" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <h3>Không chuyển đổi</h3>
+                <p>Có web nhưng <strong>không ai liên hệ</strong>, không tạo được leads hay đơn hàng nào.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== CSS ===== -->
+<style>
+.pain-points {
+    background: var(--gray-50);
+    padding: 100px 0;
+}
+
+.pain-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.pain-card {
+    background: var(--white);
+    padding: 32px 24px;
+    border-radius: 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid var(--gray-100);
+}
+
+.pain-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    border-color: transparent;
+}
+
+.pain-icon {
+    margin-bottom: 20px;
+}
+
+.pain-card h3 {
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+}
+
+.pain-card p {
+    font-size: 0.9rem;
+    color: var(--gray-500);
+    line-height: 1.6;
+}
+
+.pain-card p strong {
+    color: var(--danger);
+}
+
+@media (max-width: 1024px) {
+    .pain-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .pain-points {
+        padding: 60px 0;
+    }
+    
+    .pain-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>

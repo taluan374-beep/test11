@@ -362,6 +362,75 @@ if (heroTitle) {
 }
 */
 
+// ===== Popup Functionality =====
+const popupOverlay = document.getElementById('popupOverlay');
+const popupContent = document.getElementById('popupContent');
+const popupClose = document.getElementById('popupClose');
+
+function openPopup(popupId) {
+    const template = document.getElementById(popupId);
+    if (!template) return;
+    
+    // Clone template content
+    const content = template.content.cloneNode(true);
+    popupContent.innerHTML = '';
+    popupContent.appendChild(content);
+    
+    // Show popup
+    popupOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    
+    // Animate metric bars if present
+    setTimeout(() => {
+        const metricFills = popupContent.querySelectorAll('.metric-fill');
+        metricFills.forEach(fill => {
+            const width = fill.style.width;
+            fill.style.width = '0%';
+            setTimeout(() => {
+                fill.style.transition = 'width 1s ease-out';
+                fill.style.width = width;
+            }, 100);
+        });
+    }, 200);
+}
+
+function closePopup() {
+    popupOverlay.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+// Open popup when clicking showcase items
+document.querySelectorAll('.showcase-item[data-popup]').forEach(item => {
+    item.addEventListener('click', () => {
+        const popupId = item.getAttribute('data-popup');
+        openPopup(popupId);
+    });
+});
+
+// Close popup on close button click
+popupClose.addEventListener('click', closePopup);
+
+// Close popup on overlay click (outside modal)
+popupOverlay.addEventListener('click', (e) => {
+    if (e.target === popupOverlay) {
+        closePopup();
+    }
+});
+
+// Close popup on Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && popupOverlay.classList.contains('active')) {
+        closePopup();
+    }
+});
+
+// Handle popup CTA clicks - close popup and scroll to contact
+document.addEventListener('click', (e) => {
+    if (e.target.classList.contains('popup-cta')) {
+        closePopup();
+    }
+});
+
 // ===== Console Easter Egg =====
 console.log('%c🚀 LandingPro', 'font-size: 24px; font-weight: bold; color: #6366f1;');
 console.log('%cThiết kế Landing Page chuyên nghiệp, tối ưu chi phí!', 'font-size: 14px; color: #666;');

@@ -1,0 +1,525 @@
+<!-- ============================================
+    SOLUTION SECTION + POPUP - LandingPro
+    Bao gồm popup khi click vào từng item
+============================================ -->
+
+<!-- ===== HTML ===== -->
+<section class="solution" id="services">
+    <div class="container">
+        <div class="solution-content">
+            <div class="solution-text">
+                <span class="section-tag">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                        <polyline points="22 4 12 14.01 9 11.01"/>
+                    </svg>
+                    Giải pháp hoàn hảo
+                </span>
+                <h2>Landing Page <span class="gradient-text">Tối Ưu Chuyển Đổi</span></h2>
+                <p class="solution-desc">
+                    Chúng tôi hiểu startup và cá nhân kinh doanh cần gì: 
+                    <strong>nhanh, đẹp, hiệu quả, và hợp túi tiền</strong>. 
+                    Một landing page được thiết kế tốt có thể mang lại kết quả tốt hơn cả website phức tạp.
+                </p>
+                <ul class="solution-list">
+                    <li>
+                        <span class="check-icon">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                        </span>
+                        <div>
+                            <strong>Thiết kế tập trung vào chuyển đổi</strong>
+                            <p>Mỗi element được đặt đúng vị trí để dẫn dắt khách hàng hành động</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="check-icon">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                        </span>
+                        <div>
+                            <strong>Tối ưu tốc độ & SEO chuẩn Google</strong>
+                            <p>Load dưới 3 giây, điểm PageSpeed > 90, chuẩn Core Web Vitals</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="check-icon">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                        </span>
+                        <div>
+                            <strong>Responsive hoàn hảo mọi thiết bị</strong>
+                            <p>Hiển thị đẹp trên Desktop, Tablet, Mobile - 70% traffic từ điện thoại</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="check-icon">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                        </span>
+                        <div>
+                            <strong>Tích hợp đầy đủ công cụ marketing</strong>
+                            <p>Facebook Pixel, Google Analytics, Google Tag Manager, Form thu lead</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="solution-visual">
+                <div class="feature-showcase">
+                    <div class="showcase-item active" data-popup="popup-conversion">
+                        <div class="showcase-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <circle cx="12" cy="12" r="6"/>
+                                <circle cx="12" cy="12" r="2"/>
+                            </svg>
+                        </div>
+                        <div class="showcase-content">
+                            <h4>Tỷ lệ chuyển đổi tăng 40%</h4>
+                            <p>So với website thông thường không được tối ưu</p>
+                        </div>
+                        <div class="showcase-badge">+40%</div>
+                        <span class="popup-hint">Click để xem chi tiết →</span>
+                    </div>
+                    <div class="showcase-item" data-popup="popup-speed">
+                        <div class="showcase-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2">
+                                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                            </svg>
+                        </div>
+                        <div class="showcase-content">
+                            <h4>PageSpeed Score > 90</h4>
+                            <p>Tốc độ load trang siêu nhanh, giảm tỷ lệ thoát</p>
+                        </div>
+                        <div class="showcase-badge">90+</div>
+                        <span class="popup-hint">Click để xem chi tiết →</span>
+                    </div>
+                    <div class="showcase-item" data-popup="popup-mobile">
+                        <div class="showcase-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2">
+                                <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
+                                <line x1="12" y1="18" x2="12.01" y2="18"/>
+                            </svg>
+                        </div>
+                        <div class="showcase-content">
+                            <h4>Mobile-first Design</h4>
+                            <p>Ưu tiên trải nghiệm trên điện thoại di động</p>
+                        </div>
+                        <div class="showcase-badge">70%</div>
+                        <span class="popup-hint">Click để xem chi tiết →</span>
+                    </div>
+                    <div class="showcase-item" data-popup="popup-support">
+                        <div class="showcase-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#ec4899" stroke-width="2">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                            </svg>
+                        </div>
+                        <div class="showcase-content">
+                            <h4>Hỗ trợ 30 ngày miễn phí</h4>
+                            <p>Bảo hành và hỗ trợ kỹ thuật sau bàn giao</p>
+                        </div>
+                        <div class="showcase-badge">30 ngày</div>
+                        <span class="popup-hint">Click để xem chi tiết →</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Popup Overlay -->
+<div class="popup-overlay" id="popupOverlay">
+    <div class="popup-modal">
+        <button class="popup-close" id="popupClose">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="6" x2="6" y2="18"/>
+                <line x1="6" y1="6" x2="18" y2="18"/>
+            </svg>
+        </button>
+        <div class="popup-content" id="popupContent"></div>
+    </div>
+</div>
+
+<!-- Popup Templates -->
+<template id="popup-conversion">
+    <div class="popup-header">
+        <div class="popup-icon" style="background: rgba(99, 102, 241, 0.1); color: #6366f1;">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>
+            </svg>
+        </div>
+        <h3>Tỷ lệ chuyển đổi tăng 40%</h3>
+    </div>
+    <div class="popup-body">
+        <p class="popup-intro">Landing page được thiết kế với mục tiêu duy nhất: <strong>biến khách thăm thành khách hàng</strong>.</p>
+        <ul class="popup-list">
+            <li><span class="popup-check">✓</span><div><strong>CTA Strategy</strong><p>Nút CTA nổi bật, đặt đúng vị trí "điểm nóng"</p></div></li>
+            <li><span class="popup-check">✓</span><div><strong>Social Proof</strong><p>Testimonials, số liệu thống kê tạo niềm tin</p></div></li>
+            <li><span class="popup-check">✓</span><div><strong>Urgency & Scarcity</strong><p>Tạo cảm giác khan hiếm thúc đẩy quyết định</p></div></li>
+        </ul>
+        <div class="popup-stats">
+            <div class="popup-stat"><span class="stat-number">40%</span><span class="stat-label">Tăng conversion</span></div>
+            <div class="popup-stat"><span class="stat-number">2.5x</span><span class="stat-label">ROI cao hơn</span></div>
+            <div class="popup-stat"><span class="stat-number">-35%</span><span class="stat-label">Giảm bounce rate</span></div>
+        </div>
+        <a href="#contact" class="btn btn-primary popup-cta">Nhận tư vấn ngay</a>
+    </div>
+</template>
+
+<template id="popup-speed">
+    <div class="popup-header">
+        <div class="popup-icon" style="background: rgba(16, 185, 129, 0.1); color: #10b981;">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+            </svg>
+        </div>
+        <h3>PageSpeed Score > 90</h3>
+    </div>
+    <div class="popup-body">
+        <p class="popup-intro"><strong>Tốc độ load trang là yếu tố sống còn</strong> của conversion. Mỗi giây delay giảm 7% conversion.</p>
+        <ul class="popup-list">
+            <li><span class="popup-check">✓</span><div><strong>Image Optimization</strong><p>Nén ảnh thông minh, WebP format, lazy loading</p></div></li>
+            <li><span class="popup-check">✓</span><div><strong>Code Optimization</strong><p>Minify CSS/JS, critical CSS inline</p></div></li>
+            <li><span class="popup-check">✓</span><div><strong>Core Web Vitals</strong><p>Đạt chuẩn LCP, FID, CLS của Google</p></div></li>
+        </ul>
+        <a href="#contact" class="btn btn-primary popup-cta">Kiểm tra tốc độ web - Miễn phí</a>
+    </div>
+</template>
+
+<template id="popup-mobile">
+    <div class="popup-header">
+        <div class="popup-icon" style="background: rgba(245, 158, 11, 0.1); color: #f59e0b;">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/>
+            </svg>
+        </div>
+        <h3>Mobile-first Design</h3>
+    </div>
+    <div class="popup-body">
+        <p class="popup-intro"><strong>70% traffic hiện nay đến từ mobile.</strong> Thiết kế mobile-first là bắt buộc.</p>
+        <ul class="popup-list">
+            <li><span class="popup-check">✓</span><div><strong>Touch-friendly</strong><p>Nút bấm đủ lớn, dễ thao tác bằng ngón tay</p></div></li>
+            <li><span class="popup-check">✓</span><div><strong>Responsive Typography</strong><p>Font size tự động điều chỉnh theo màn hình</p></div></li>
+            <li><span class="popup-check">✓</span><div><strong>Fast Mobile Loading</strong><p>Tối ưu cho mạng 3G/4G</p></div></li>
+        </ul>
+        <a href="#contact" class="btn btn-primary popup-cta">Xem demo responsive</a>
+    </div>
+</template>
+
+<template id="popup-support">
+    <div class="popup-header">
+        <div class="popup-icon" style="background: rgba(236, 72, 153, 0.1); color: #ec4899;">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+            </svg>
+        </div>
+        <h3>Hỗ trợ 30 ngày miễn phí</h3>
+    </div>
+    <div class="popup-body">
+        <p class="popup-intro"><strong>30 ngày bảo hành miễn phí</strong> đảm bảo landing page hoạt động hoàn hảo.</p>
+        <ul class="popup-list">
+            <li><span class="popup-check">✓</span><div><strong>Fix bugs miễn phí</strong><p>Sửa mọi lỗi kỹ thuật trong 30 ngày</p></div></li>
+            <li><span class="popup-check">✓</span><div><strong>Chỉnh sửa nội dung</strong><p>Thay đổi text, hình ảnh theo gói</p></div></li>
+            <li><span class="popup-check">✓</span><div><strong>Hướng dẫn quản lý</strong><p>Video tutorial + tài liệu hướng dẫn</p></div></li>
+        </ul>
+        <div class="popup-guarantee">
+            <span>🛡️</span>
+            <p><strong>Cam kết:</strong> Hoàn tiền 100% nếu không hài lòng</p>
+        </div>
+        <a href="#contact" class="btn btn-primary popup-cta">Bắt đầu với sự yên tâm</a>
+    </div>
+</template>
+
+<!-- ===== CSS ===== -->
+<style>
+.solution { padding: 100px 0; }
+
+.solution-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.solution-text .section-tag {
+    display: inline-flex;
+    margin-bottom: 16px;
+}
+
+.solution-text h2 { margin-bottom: 24px; }
+
+.solution-desc {
+    font-size: 1.1rem;
+    color: var(--gray-600);
+    margin-bottom: 32px;
+    line-height: 1.7;
+}
+
+.solution-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.solution-list li {
+    display: flex;
+    gap: 16px;
+}
+
+.check-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    background: linear-gradient(135deg, var(--success), #34d399);
+    color: var(--white);
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.solution-list li strong {
+    display: block;
+    margin-bottom: 4px;
+    color: var(--dark);
+}
+
+.solution-list li p {
+    font-size: 0.9rem;
+    color: var(--gray-500);
+}
+
+.feature-showcase {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.showcase-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 24px;
+    background: var(--white);
+    border-radius: 12px;
+    border: 2px solid var(--gray-100);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.showcase-item:hover,
+.showcase-item.active {
+    border-color: var(--primary);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.showcase-item.active {
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.03), rgba(14, 165, 233, 0.03));
+}
+
+.showcase-icon { flex-shrink: 0; }
+.showcase-content { flex: 1; }
+.showcase-content h4 { margin-bottom: 4px; font-size: 1rem; }
+.showcase-content p { font-size: 0.85rem; color: var(--gray-500); }
+
+.showcase-badge {
+    padding: 6px 12px;
+    background: var(--gradient);
+    color: var(--white);
+    font-size: 0.8rem;
+    font-weight: 700;
+    border-radius: 6px;
+}
+
+.popup-hint {
+    position: absolute;
+    bottom: 8px;
+    right: 16px;
+    font-size: 0.7rem;
+    color: var(--primary);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.showcase-item:hover .popup-hint { opacity: 1; }
+
+/* Popup Styles */
+.popup-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.popup-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.popup-modal {
+    background: var(--white);
+    border-radius: 24px;
+    max-width: 600px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    transform: scale(0.9) translateY(20px);
+    transition: transform 0.3s ease;
+}
+
+.popup-overlay.active .popup-modal {
+    transform: scale(1) translateY(0);
+}
+
+.popup-close {
+    position: absolute;
+    top: 16px; right: 16px;
+    width: 40px; height: 40px;
+    border: none;
+    background: var(--gray-100);
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gray-600);
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.popup-close:hover {
+    background: var(--danger);
+    color: var(--white);
+}
+
+.popup-content { padding: 40px; }
+.popup-header { text-align: center; margin-bottom: 32px; }
+
+.popup-icon {
+    width: 80px; height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+}
+
+.popup-header h3 { font-size: 1.5rem; color: var(--dark); }
+.popup-intro { font-size: 1rem; color: var(--gray-600); line-height: 1.7; margin-bottom: 24px; }
+
+.popup-list { list-style: none; margin-bottom: 32px; }
+.popup-list li { display: flex; gap: 16px; margin-bottom: 20px; }
+
+.popup-check {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px; height: 24px;
+    background: rgba(16, 185, 129, 0.1);
+    color: var(--success);
+    border-radius: 50%;
+    font-size: 0.75rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.popup-list li strong { display: block; color: var(--dark); margin-bottom: 4px; }
+.popup-list li p { font-size: 0.9rem; color: var(--gray-500); }
+
+.popup-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 32px;
+    padding: 24px;
+    background: var(--gray-50);
+    border-radius: 12px;
+}
+
+.popup-stat { text-align: center; }
+.popup-stat .stat-number { display: block; font-size: 1.75rem; font-weight: 800; color: var(--primary); }
+.popup-stat .stat-label { font-size: 0.8rem; color: var(--gray-500); }
+
+.popup-guarantee {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px;
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    border-radius: 12px;
+    margin-bottom: 24px;
+}
+
+.popup-guarantee p { font-size: 0.9rem; color: var(--gray-700); }
+.popup-cta { width: 100%; }
+
+@media (max-width: 1024px) {
+    .solution-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .solution { padding: 60px 0; }
+    .popup-content { padding: 24px; }
+    .popup-icon { width: 60px; height: 60px; }
+    .popup-stats { grid-template-columns: 1fr; }
+}
+</style>
+
+<!-- ===== JavaScript ===== -->
+<script>
+(function() {
+    const popupOverlay = document.getElementById('popupOverlay');
+    const popupContent = document.getElementById('popupContent');
+    const popupClose = document.getElementById('popupClose');
+
+    function openPopup(popupId) {
+        const template = document.getElementById(popupId);
+        if (!template) return;
+        const content = template.content.cloneNode(true);
+        popupContent.innerHTML = '';
+        popupContent.appendChild(content);
+        popupOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closePopup() {
+        popupOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    document.querySelectorAll('.showcase-item[data-popup]').forEach(item => {
+        item.addEventListener('click', () => {
+            openPopup(item.getAttribute('data-popup'));
+        });
+    });
+
+    popupClose.addEventListener('click', closePopup);
+    popupOverlay.addEventListener('click', (e) => {
+        if (e.target === popupOverlay) closePopup();
+    });
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && popupOverlay.classList.contains('active')) closePopup();
+    });
+    document.addEventListener('click', (e) => {
+        if (e.target.classList.contains('popup-cta')) closePopup();
+    });
+})();
+</script>
